@@ -10,5 +10,8 @@ public class UISkinView : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private TMP_Text _textButton;
 
+    public void InitializeView()
+    {
 
+    }
 }
