@@ -13723,6 +13723,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d86bb102f4ee8dd44805de7cad2c1178, type: 3}
   m_PrefabInstance: {fileID: 1363626147}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &765715869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8879774442265043365, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
+  m_PrefabInstance: {fileID: 8879774441243550181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &772610160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d86bb102f4ee8dd44805de7cad2c1178, type: 3}
@@ -20445,6 +20450,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e3d1bf8eac8594c9ddac41bfbc68b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1126613061
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765715869}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc7d0e093074e0d45910759d7c5f082f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1130838892
 GameObject:
   m_ObjectHideFlags: 0
@@ -34617,6 +34642,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8879774441412290958, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1200562
+      objectReference: {fileID: 0}
     - target: {fileID: 8879774441777754755, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -34708,6 +34737,10 @@ PrefabInstance:
     - target: {fileID: 8879774441777754767, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879774442265043367, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8879774442676723142, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
       propertyPath: m_AnchorMax.x
