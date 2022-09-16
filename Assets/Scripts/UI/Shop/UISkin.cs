@@ -4,9 +4,14 @@ public class UISkin : MonoBehaviour
 {
     [SerializeField] private Sprite _spriteIcon;
     [SerializeField] private int _price;
+    [SerializeField] private bool isBuyed = false;
+    [SerializeField] private bool isEquiped = false;
 
-    private bool isBuyed = false;
-    private bool isEquiped = false;
+    public Sprite Icon => _spriteIcon;
+    public bool IsBuyed => isBuyed;
+    public bool IsEquiped => isEquiped;
+
+    public int Price => _price; 
 
     public void Buy()
     {

@@ -613,6 +613,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8875094817191098102}
   - component: {fileID: 8875094817181473056}
+  - component: {fileID: -2715470993699865441}
+  - component: {fileID: 3931278992549367447}
+  - component: {fileID: -6160574949477608290}
+  - component: {fileID: 1589545149359950724}
+  - component: {fileID: 2449558220614905582}
   m_Layer: 0
   m_Name: Stickman_sphere_Criminal_01
   m_TagString: Untagged
@@ -662,6 +667,79 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2715470993699865441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875094817190865558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975561df5f85b854ba798d53a4fc7f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteIcon: {fileID: 21300000, guid: 7c937e2acc6e97f45b5a5867069d058f, type: 3}
+  _price: 1500
+  isBuyed: 0
+  isEquiped: 0
+--- !u!114 &3931278992549367447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875094817190865558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fbb8c2c888e3a49bcd59187e730ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 40
+  _coroutineDelay: 0.01
+  _deathParticle: {fileID: 0}
+--- !u!114 &-6160574949477608290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875094817190865558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead96a644b3070f419b99c0be1d54e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1589545149359950724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875094817190865558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb6df5d2e11a3642b2ea573c0800cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetPosition: {x: 0, y: 0, z: 0}
+  _speed: 3
+  _coroutineDelay: 0.01
+  IsCharged: 0
+--- !u!136 &2449558220614905582
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875094817190865558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2625686
+  m_Height: 1.9477075
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.89227265, z: 0}
 --- !u!1 &8875094817190865560
 GameObject:
   m_ObjectHideFlags: 0

@@ -1181,6 +1181,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6094272487405738261}
   - component: {fileID: 6094272487415592671}
+  - component: {fileID: 6930665804125136477}
+  - component: {fileID: -3043921992081427381}
+  - component: {fileID: -1011749237975518075}
+  - component: {fileID: 9041265361802354854}
+  - component: {fileID: 5962455724153472204}
   m_Layer: 0
   m_Name: Stickman_sphere_Boxer
   m_TagString: Untagged
@@ -1228,6 +1233,79 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6930665804125136477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975561df5f85b854ba798d53a4fc7f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteIcon: {fileID: 21300000, guid: 2bed4bc349143774c995973ab28c4085, type: 3}
+  _price: 1000
+  isBuyed: 0
+  isEquiped: 0
+--- !u!114 &-3043921992081427381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fbb8c2c888e3a49bcd59187e730ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 40
+  _coroutineDelay: 0.01
+  _deathParticle: {fileID: 0}
+--- !u!114 &-1011749237975518075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead96a644b3070f419b99c0be1d54e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9041265361802354854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb6df5d2e11a3642b2ea573c0800cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetPosition: {x: 0, y: 0, z: 0}
+  _speed: 3
+  _coroutineDelay: 0.01
+  IsCharged: 0
+--- !u!136 &5962455724153472204
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2625686
+  m_Height: 1.9477075
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.89227265, z: 0}
 --- !u!1 &6094272487406093687
 GameObject:
   m_ObjectHideFlags: 0
