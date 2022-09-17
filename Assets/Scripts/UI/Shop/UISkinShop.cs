@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public abstract class UISkinShop : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public abstract class UISkinShop : MonoBehaviour
     [SerializeField] private GameObject _container;
     [SerializeField] private PlayerWallet _playerWallet;
 
-    protected List<UISkinView> _views;
+    protected List<UISkinView> _views = new List<UISkinView>();
 
     private void Start()
     {
+        SortByPrice();
         AddAllSkins();
+    }
+
+    private void SortByPrice()
+    {
+       _skins = (_skins.OrderBy(skin => skin.Price).ToList());
     }
 
     private void AddAllSkins()

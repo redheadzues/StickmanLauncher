@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3075359792736514344}
   - component: {fileID: 2462916664082121466}
   - component: {fileID: 7967798568900443934}
+  - component: {fileID: 4754969282250735877}
   m_Layer: 5
   m_Name: SkinView
   m_TagString: Untagged
@@ -336,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
+  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -353,6 +354,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4754969282250735877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552273069652869359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897ac2566394d944b8ae9940f181465c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imageTemplate: {fileID: 8935754491728628538}
+  _buttonGetSkin: {fileID: 7628797785909768469}
+  _textButton: {fileID: 5163500819376059259}
 --- !u!1 &9023531043706769366
 GameObject:
   m_ObjectHideFlags: 0

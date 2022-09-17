@@ -22,8 +22,7 @@ public class MultiplyTable : ObjectsPool
                 MultyplierStickman(flyOperator.Direction, collisionPoint);
                 _particleSystem.transform.position = collisionPoint;
                 _particleSystem.Play();
-            }
-                
+            }               
     }
 
     private void MultyplierStickman(Vector3 direction, Vector3 point)
