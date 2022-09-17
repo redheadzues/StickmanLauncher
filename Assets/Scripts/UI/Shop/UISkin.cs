@@ -7,11 +7,15 @@ public class UISkin : MonoBehaviour
     [SerializeField] private bool isBuyed = false;
     [SerializeField] private bool isEquiped = false;
 
+    private static int _ids;
+
     public Sprite Icon => _spriteIcon;
     public bool IsBuyed => isBuyed;
     public bool IsEquiped => isEquiped;
 
     public int Price => _price; 
+
+    public int Id = ++_ids;
 
     public void Buy()
     {
