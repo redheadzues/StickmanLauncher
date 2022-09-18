@@ -13,8 +13,10 @@ public class UISkinView : MonoBehaviour
     private const string c_Equiped = "Одето";
     private UISkin _skin;
 
-    public event Action<UISkinView, UISkin> Buyed;
-    public event Action Equiped;
+    public event Action<UISkinView> BuyButtonClicked;
+    public event Action<UISkinView> Equiped;
+
+    public UISkin Skin => _skin;
 
     private void OnEnable()
     {
@@ -30,21 +32,16 @@ public class UISkinView : MonoBehaviour
     {
         _skin = skin;
         _imageTemplate.sprite = skin.Icon;
-        InitializeButton(skin);
+        DisplayButton();
     }
 
-    public void Unequip()
+    public void DisplayButton()
     {
-        _textButton.text = c_Equip;
-    }
-
-    private void InitializeButton(UISkin skin)
-    {
-        if (skin.IsBuyed == false)
-            _textButton.text = skin.Price.ToString();
+        if (_skin.IsBuyed == false)
+            _textButton.text = _skin.Price.ToString();
         else
         {
-            if (skin.IsEquiped == false)
+            if (_skin.IsEquiped == false)
                 _textButton.text = c_Equip;
             else
                 _textButton.text = c_Equiped;
@@ -53,17 +50,23 @@ public class UISkinView : MonoBehaviour
 
     private void OnGetSkinButtonClick()
     {
-
+        if (_skin.IsBuyed == false)
+            TrySellSkin();
+        else
+        {
+            if (_skin.IsEquiped == false)
+                EquipSkin();
+        }
     }
 
-    private void SellSkin()
+    private void TrySellSkin()
     {
-        Buyed?.Invoke(this, _skin);
+        BuyButtonClicked?.Invoke(this);
     }
 
     private void EquipSkin()
     {
         _textButton.text = c_Equiped;
-        Equiped?.Invoke();
+        Equiped?.Invoke(this);
     }
 }

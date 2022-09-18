@@ -37,12 +37,33 @@ public abstract class UISkinShop : MonoBehaviour
         _views.Add(view);
 
         if (skin.IsBuyed == false)
-            view.Buyed += OnSkinBuyed;
+            view.BuyButtonClicked += OnSkinBuyed;
     }
 
-    private void OnSkinBuyed(UISkinView view, UISkin skin)
+    private void OnSkinBuyed(UISkinView view)
     {
-        view.Buyed -= OnSkinBuyed;
-        _playerWallet.SpendMoney(skin.Price);
+        if (TrySellSkin(view.Skin) == true)
+        {
+            view.BuyButtonClicked -= OnSkinBuyed;
+            view.Skin.Buy();
+            RefreshViewButton();
+        }
+
+    }
+
+    private bool TrySellSkin(UISkin skin)
+    {
+        bool enoughMoney = _playerWallet.Money >= skin.Price;
+
+        if (enoughMoney == true)
+            _playerWallet.SpendMoney(skin.Price);
+
+        return enoughMoney;
+    }
+
+    private void RefreshViewButton()
+    {
+        for (int i = 0; i < _views.Count; i++)
+            _views[i].DisplayButton();
     }
 }

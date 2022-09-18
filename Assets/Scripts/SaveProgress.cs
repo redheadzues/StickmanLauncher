@@ -12,7 +12,7 @@ public static class SaveProgress
             if (PlayerPrefs.HasKey(c_Money))
                 return PlayerPrefs.GetInt(c_Money);
             else
-                return 0;
+                return 50000;
         }
         set { PlayerPrefs.SetInt(c_Money, value); }
     }
