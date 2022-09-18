@@ -13,6 +13,11 @@ public abstract class UISkinShop : MonoBehaviour
 
     protected List<UISkinView> _views = new List<UISkinView>();
 
+    private void OnValidate()
+    {
+        _playerWallet = FindObjectOfType<PlayerWallet>();
+    }
+
     private void Awake()
     {
         SortByPrice();
@@ -54,7 +59,6 @@ public abstract class UISkinShop : MonoBehaviour
             view.Skin.Buy();
             RefreshViewButton();
         }
-
     }
 
     private bool TrySellSkin(UISkin skin)
