@@ -219,7 +219,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: be67069af811b3b4ba5a0e78f50fb85d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteIcon: {fileID: 21300000, guid: 7440ffdf9153e5749bcc9aa8eb30ae5c, type: 3}
   _price: 500
-  isBuyed: 0
-  isEquiped: 0
+  isBuyed: 1
+  isEquiped: 1
   Id: 12
 --- !u!114 &-5832277048632833577
 MonoBehaviour:
