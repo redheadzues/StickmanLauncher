@@ -14,7 +14,7 @@ public class AlliedSpawner : ObjectsPool
     private void OnValidate()
     {
         _launcher = FindObjectOfType<StickmanLauncher>();
-        _startMovePosition = FindObjectOfType<>
+        _startMovePosition = FindObjectOfType<StartMovePosition>().transform;
     }
 
     private void Awake()
