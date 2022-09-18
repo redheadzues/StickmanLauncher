@@ -11,6 +11,12 @@ public class AlliedSpawner : ObjectsPool
 
     private GameObject template;
 
+    private void OnValidate()
+    {
+        _launcher = FindObjectOfType<StickmanLauncher>();
+        _startMovePosition = FindObjectOfType<>
+    }
+
     private void Awake()
     {
         ChooseTemplate();
