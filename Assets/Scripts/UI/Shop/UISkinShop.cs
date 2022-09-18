@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public abstract class UISkinShop : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public abstract class UISkinShop : MonoBehaviour
     {
         SortByPrice();
         AddAllSkins();
+    }
+
+    public void Exit()
+    {
+        gameObject.SetActive(false);
     }
 
     private void SortByPrice()
