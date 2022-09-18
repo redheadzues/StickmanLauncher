@@ -13,7 +13,7 @@ public abstract class UISkinShop : MonoBehaviour
 
     protected List<UISkinView> _views = new List<UISkinView>();
 
-    private void Start()
+    private void Awake()
     {
         SortByPrice();
         AddAllSkins();

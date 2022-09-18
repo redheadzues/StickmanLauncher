@@ -68,8 +68,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f2f76b452f8979b4f909b480e9406446, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -369,6 +369,7 @@ MonoBehaviour:
   _imageTemplate: {fileID: 8935754491728628538}
   _buttonGetSkin: {fileID: 7628797785909768469}
   _textButton: {fileID: 5163500819376059259}
+  _imageCoin: {fileID: 7912770911592443147}
 --- !u!1 &9023531043706769366
 GameObject:
   m_ObjectHideFlags: 0

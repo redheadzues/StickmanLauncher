@@ -8,6 +8,7 @@ public class UISkinView : MonoBehaviour
     [SerializeField] private Image _imageTemplate;
     [SerializeField] private Button _buttonGetSkin;
     [SerializeField] private TMP_Text _textButton;
+    [SerializeField] private Image _imageCoin;
 
     private const string c_Equip = "Одеть";
     private const string c_Equiped = "Одето";
@@ -41,11 +42,24 @@ public class UISkinView : MonoBehaviour
             _textButton.text = _skin.Price.ToString();
         else
         {
+            _imageCoin.gameObject.SetActive(false);
+
             if (_skin.IsEquiped == false)
+            {
                 _textButton.text = c_Equip;
+                ChangeButtonColor(Color.white);
+            }
             else
+            {
                 _textButton.text = c_Equiped;
+                ChangeButtonColor(Color.yellow);
+            }
         }
+    }
+
+    private void ChangeButtonColor(Color color)
+    {
+        _buttonGetSkin.image.color = color;
     }
 
     private void OnGetSkinButtonClick()
@@ -66,7 +80,6 @@ public class UISkinView : MonoBehaviour
 
     private void EquipSkin()
     {
-        _textButton.text = c_Equiped;
         Equiped?.Invoke(this);
     }
 }

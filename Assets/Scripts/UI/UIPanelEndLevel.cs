@@ -14,7 +14,7 @@ public class UIPanelEndLevel : MonoBehaviour
     [SerializeField] private Button _buttonWithoutAd;
     [SerializeField] private int _winReward;
     [SerializeField] private int _defeatReward;
-
+    [SerializeField] private UICustomizer _customizer;
 
     private const string c_Win = "Win";
     private const string c_Defeat = "Defeat";
@@ -26,6 +26,7 @@ public class UIPanelEndLevel : MonoBehaviour
         _buttonReward.onClick.AddListener(OnButtonRewardClick);
         _buttonRetry.onClick.AddListener(OnButtonRetryClick);
         _buttonWithoutAd.onClick.AddListener(OButtonWithoutAdClick);
+        _customizer.gameObject.SetActive(false);
     }
 
     private void OnDisable()
