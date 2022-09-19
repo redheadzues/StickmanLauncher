@@ -979,7 +979,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dc9d5ef5fcbced488b19557557a90fc, type: 2}
+  - {fileID: 2100000, guid: 9c71a1245dba6294da110107373e56c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1181,6 +1181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6094272487405738261}
   - component: {fileID: 6094272487415592671}
+  - component: {fileID: -3562571264088501032}
   m_Layer: 0
   m_Name: Stickman_sphere_Boxer
   m_TagString: Untagged
@@ -1228,6 +1229,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3562571264088501032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094272487406093685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0477798edbba90f4bba15258e079b4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteIcon: {fileID: 21300000, guid: 2bed4bc349143774c995973ab28c4085, type: 3}
+  _price: 2000
+  isBuyed: 0
+  isEquiped: 0
+  Id: 1
 --- !u!1 &6094272487406093687
 GameObject:
   m_ObjectHideFlags: 0
