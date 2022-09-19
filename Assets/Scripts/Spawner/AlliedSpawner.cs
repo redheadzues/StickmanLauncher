@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class AlliedSpawner : ObjectsPool
 {
     [SerializeField] private List<UISkin> _templates;
-    [SerializeField] private GameObject _prefab;
     [SerializeField] private StickmanLauncher _launcher;
     [SerializeField] private Transform _startMovePosition;
 
@@ -21,7 +20,7 @@ public class AlliedSpawner : ObjectsPool
     private void Awake()
     {
         ChooseTemplate();
-        InitializePool(_prefab);
+        InitializePool(_template);
     }
 
     private void OnEnable()

@@ -24,9 +24,9 @@ public class StickmanLauncher : DirectionFinder
         _charger.Charged += OnCharged;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-
+        yield return new WaitForSeconds(0.1f);
         Successfully?.Invoke();
     }
 
@@ -58,8 +58,13 @@ public class StickmanLauncher : DirectionFinder
        if(transform.position.z < _launchPoint)
        {
             _lastCharged.transform.SetParent(null);
+            print(_lastCharged.transform.parent);
             var direction = GetNormalizedVector();
+            print(direction);
             _lastCharged.StartFlying(direction);
+            print("good");
+
+            print(transform.childCount);
        }
 
         return transform.position.z < _launchPoint;
