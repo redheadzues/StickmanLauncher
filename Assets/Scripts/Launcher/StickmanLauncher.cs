@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,9 +24,12 @@ public class StickmanLauncher : DirectionFinder
         _charger.Charged += OnCharged;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(1f);
+        print($"{Time.time} {this}");
         Successfully?.Invoke();
+        print($"{Time.time} {this}");
     }
 
     private void OnDisable()

@@ -13,6 +13,11 @@ public class StickmanCharger : MonoBehaviour
 
     public event UnityAction<GameObject> Charged;
 
+    private void OnValidate()
+    {
+        _spawner = FindObjectOfType<AlliedSpawner>();
+    }
+
     private void Awake()
     {
         _launcher = GetComponent<StickmanLauncher>();
@@ -36,6 +41,8 @@ public class StickmanCharger : MonoBehaviour
 
         if (_waitingForCharge == null)
             _waitingForCharge = stickman;
+
+        print($"{Time.time} {this} {stickman}");
     }
 
     private void OnLaunchSuccessfully()

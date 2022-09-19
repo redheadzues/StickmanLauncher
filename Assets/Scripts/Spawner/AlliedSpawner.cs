@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,11 +6,17 @@ public class AlliedSpawner : ObjectsPool
 {
     [SerializeField] private List<UISkin> _templates;
     [SerializeField] private StickmanLauncher _launcher;
-    [SerializeField] private Transform _startMovePosition;
+    [SerializeField] private Transform _waitPosition;
 
     private GameObject _template;
 
     public event UnityAction<GameObject> Instantiated;
+
+    private void OnValidate()
+    {
+        _launcher = FindObjectOfType<StickmanLauncher>();
+        _waitPosition = FindObjectOfType<WaitingPosition>().transform;
+    }
 
     private void Awake()
     {
@@ -24,7 +31,10 @@ public class AlliedSpawner : ObjectsPool
 
     private void Start()
     {
+
+        print($"{Time.time} {this}");
         Spawn();
+        print($"{Time.time} {this}");
     }
 
     private void OnDisable()
@@ -47,7 +57,7 @@ public class AlliedSpawner : ObjectsPool
         if (TryGetObject(out GameObject stickman))
         {
             if(stickman.TryGetComponent<StickmanAppearer>(out StickmanAppearer appearer))
-                appearer.SetTarget(_startMovePosition);
+                appearer.SetTarget(_waitPosition);
 
             SetStickman(stickman);
             Instantiated?.Invoke(stickman);
