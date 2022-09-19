@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89148739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,8 +35,8 @@ RectTransform:
   - {fileID: 1319847671}
   - {fileID: 320113679}
   - {fileID: 1468954520450992021}
-  m_Father: {fileID: 8879774441777754767}
-  m_RootOrder: 3
+  m_Father: {fileID: 8879774442265043367}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 113135538865486755}
   - component: {fileID: 7510547447617933663}
   - component: {fileID: 7306347799137006128}
+  - component: {fileID: 6075127998143082094}
   m_Layer: 5
   m_Name: ButtonOpenCustomizer
   m_TagString: Untagged
@@ -728,6 +729,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6075127998143082094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4520771914655660735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb482bf3469a1940ac2c6132f6d5563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customizer: {fileID: 0}
 --- !u!1 &5263143329769834730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1116,6 @@ RectTransform:
   - {fileID: 8879774442390839819}
   - {fileID: 8879774441276734673}
   - {fileID: 8879774442265043367}
-  - {fileID: 89148740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45.763, y: 0, z: 0}
