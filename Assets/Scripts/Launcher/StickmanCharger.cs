@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +6,6 @@ public class StickmanCharger : MonoBehaviour
 {    
     [SerializeField] private AlliedSpawner _spawner;
     [SerializeField] private Vector3 _localPointToSetPosition;
-    [SerializeField] private TMP_Text _text;
 
     private GameObject _lastSpawned;
     private GameObject _waitingForCharge;
@@ -41,8 +39,6 @@ public class StickmanCharger : MonoBehaviour
     {
         _lastSpawned = stickman;
 
-        _text.text += "C";
-
         if (_waitingForCharge == null)
             _waitingForCharge = stickman;
     }
@@ -51,7 +47,7 @@ public class StickmanCharger : MonoBehaviour
     {
         _waitingForCharge.transform.SetParent(_launcher.transform);
         _waitingForCharge.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        _waitingForCharge.transform.localPosition = _localPointToSetPosition;                
+        _waitingForCharge.transform.localPosition = _localPointToSetPosition;
 
         Charged?.Invoke(_waitingForCharge);
 

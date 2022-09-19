@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 public class AlliedSpawner : ObjectsPool
 {
     [SerializeField] private List<UISkin> _templates;
+    [SerializeField] private GameObject _prefab;
     [SerializeField] private StickmanLauncher _launcher;
     [SerializeField] private Transform _startMovePosition;
-    [SerializeField] private TMP_Text _text;
 
     public event UnityAction<GameObject> Instantiated;
 
@@ -22,7 +21,7 @@ public class AlliedSpawner : ObjectsPool
     private void Awake()
     {
         ChooseTemplate();
-        InitializePool(_template);
+        InitializePool(_prefab);
     }
 
     private void OnEnable()
@@ -57,7 +56,7 @@ public class AlliedSpawner : ObjectsPool
             if(stickman.TryGetComponent<StickmanAppearer>(out StickmanAppearer appearer))
                 appearer.SetTarget(_startMovePosition);
 
-            _text.text += "/";
+ 
             SetStickman(stickman);
             Instantiated?.Invoke(stickman);
         }

@@ -1,5 +1,5 @@
 using System;
-using TMPro;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(StickmanCharger))]
@@ -7,7 +7,6 @@ public class StickmanLauncher : DirectionFinder
 {
     [SerializeField] private ElasticTensioner _elasticTensioner;
     [SerializeField] private float _launchPoint;
-    [SerializeField] private TMP_Text _text;
 
     private StickmanFlightOperator _lastCharged;
     private StickmanCharger _charger;
@@ -27,16 +26,10 @@ public class StickmanLauncher : DirectionFinder
 
     private void Start()
     {
-        _text.text += "Start";
-        Lnch();
+
+        Successfully?.Invoke();
     }
 
-    private void Lnch()
-    {
-        _text.text += "BA";
-        Successfully?.Invoke();
-        _text.text += "L";
-    }
 
     private void OnDisable()
     {

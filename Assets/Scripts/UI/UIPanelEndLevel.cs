@@ -19,8 +19,6 @@ public class UIPanelEndLevel : MonoBehaviour
     private const string c_Win = "Win";
     private const string c_Defeat = "Defeat";
 
-
-
     private void OnEnable()
     {
         _buttonReward.onClick.AddListener(OnButtonRewardClick);
