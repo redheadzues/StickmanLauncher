@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerWallet : MonoBehaviour
@@ -6,9 +7,19 @@ public class PlayerWallet : MonoBehaviour
 
     public int Money => _money;
 
+    public event Action<int> MoneyChanged;
+
     private void Start()
     {
         _money = SaveProgress.Money;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.KeypadPlus))
+            AddMoney(1000);
+        if(Input.GetKeyUp(KeyCode.KeypadMinus))
+            SpendMoney(1000);
     }
 
     public void AddMoney(int value)
@@ -25,5 +36,6 @@ public class PlayerWallet : MonoBehaviour
     {
         _money = value;
         SaveProgress.Money = _money;
+        MoneyChanged?.Invoke(_money);
     }
 }
