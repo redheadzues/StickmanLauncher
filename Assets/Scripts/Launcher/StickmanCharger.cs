@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,7 @@ public class StickmanCharger : MonoBehaviour
 {    
     [SerializeField] private AlliedSpawner _spawner;
     [SerializeField] private Vector3 _localPointToSetPosition;
+    [SerializeField] private TMP_Text _text;
 
     private GameObject _lastSpawned;
     private GameObject _waitingForCharge;
@@ -38,6 +40,8 @@ public class StickmanCharger : MonoBehaviour
     private void OnInstantiated(GameObject stickman)
     {
         _lastSpawned = stickman;
+
+        _text.text += "C";
 
         if (_waitingForCharge == null)
             _waitingForCharge = stickman;
