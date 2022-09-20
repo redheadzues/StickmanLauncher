@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LevelEvent : MonoBehaviour
@@ -6,13 +7,14 @@ public class LevelEvent : MonoBehaviour
     [SerializeField] private EnemyCastleBreaker _enemyCastle;
     [SerializeField] private UIPanelEndLevel _endLevelPanel;
 
+    public event Action Defeated;
+    public event Action Won;
 
     private void OnValidate()
     {
         _alliedCastle = FindObjectOfType<AlliedCastleBreacker>();
         _enemyCastle = FindObjectOfType<EnemyCastleBreaker>();
         _endLevelPanel = FindObjectOfType<UIPanelEndLevel>();
-
     }
 
     private void OnEnable()
@@ -31,15 +33,13 @@ public class LevelEvent : MonoBehaviour
     private void OnEnemyCastleBreacked()
     {
         ActivatePanel();
-        _endLevelPanel.OnPlayerWin();
-        Time.timeScale = 0;
+        Won?.Invoke();
     }
 
     private void OnAlliedCastleBreacked()
     {
         ActivatePanel();
-        _endLevelPanel.OnPlayerDefeat();
-        Time.timeScale = 0;
+        Defeated?.Invoke();
     }
 
     private void ActivatePanel()
