@@ -862,7 +862,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6087397120915759448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89148741}
+        m_TargetAssemblyTypeName: UISkinShop, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8879774440595125177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1122,7 @@ RectTransform:
   m_GameObject: {fileID: 8879774441777754755}
   m_LocalRotation: {x: 0.3888264, y: 0, z: 0, w: 0.9213111}
   m_LocalPosition: {x: 0, y: 0, z: -34.98713}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0018042196, y: 0.0018042196, z: 0.0018042196}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8879774442390839819}
@@ -1133,7 +1145,7 @@ Canvas:
   m_GameObject: {fileID: 8879774441777754755}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 3
   m_PixelPerfect: 0
@@ -1167,7 +1179,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8879774441777754754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,6 +1693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3822351245041964118, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3822351245652016558, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_fontSize
       value: 85.4
@@ -1691,7 +1707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822351246296849535, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.1201172
+      value: -1.1200562
       objectReference: {fileID: 0}
     - target: {fileID: 5144409749853484713, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1751,6 +1767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+--- !u!1 &8879774442265043365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3822351245041964116, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+  m_PrefabInstance: {fileID: 5634271390043698673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8879774442265043367 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3822351245041964118, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
@@ -1778,3 +1799,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1126613061
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879774442265043365}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc7d0e093074e0d45910759d7c5f082f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
