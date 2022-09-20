@@ -32,6 +32,14 @@ public class AlliedSpawner : ObjectsPool
         _launcher.Successfully -= OnLaunched;
     }
 
+    public GameObject GetTemplate()
+    {
+        if (TryGetObject(out GameObject stickman))
+            return stickman;
+
+        return null;
+    }
+
     private void ChooseTemplate()
     {
         for(int i = 0; i < _templates.Count; i++)

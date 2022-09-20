@@ -617,7 +617,6 @@ GameObject:
   - component: {fileID: -2028385932989616881}
   - component: {fileID: 4442749413467169790}
   - component: {fileID: -4903374272309741250}
-  - component: {fileID: 8197132661131800156}
   - component: {fileID: 3488659342044130015}
   m_Layer: 0
   m_Name: Stickman_sphere_Criminal_01
@@ -728,20 +727,6 @@ MonoBehaviour:
   _speed: 3
   _coroutineDelay: 0.01
   IsCharged: 0
---- !u!136 &8197132661131800156
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8875094817190865558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &3488659342044130015
 CapsuleCollider:
   m_ObjectHideFlags: 0

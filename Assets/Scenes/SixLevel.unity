@@ -5898,7 +5898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f66a8916998764586e76d1e56559be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 10
+  _capacity: 25
   _container: {fileID: 242451643}
   _templates:
   - {fileID: -6892325670217716860, guid: d37e62a3642d44246b5a8400fcf23b86, type: 3}
@@ -5969,7 +5969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8903fb4eb8063d24d981dc423fa211fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 10
+  _capacity: 30
   _container: {fileID: 242481867}
   _template: {fileID: 4286650506782190043, guid: 9d2a771609689ca4ba83ef3db732b4dd, type: 3}
 --- !u!1001 &246239873
@@ -7798,7 +7798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c91b0e174ff2a48a6a2e12eda54cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 10
+  _capacity: 30
   _container: {fileID: 679561489}
   _particleExplosion: {fileID: 130848, guid: 51b49dbbf9f075c4481b37ea2db7c9fa, type: 3}
 --- !u!1 &705507993
@@ -10762,9 +10762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d556a44041fc9744ebff52f21e5794bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 5
-  _container: {fileID: 1331248964}
-  _template: {fileID: 7091013710468193344, guid: d37e62a3642d44246b5a8400fcf23b86, type: 3}
+  _spawner: {fileID: 242451642}
   _DuplicateOffsetX: 0
   _particleSystem: {fileID: 1502161895}
 --- !u!54 &1331248962
@@ -10971,9 +10969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d556a44041fc9744ebff52f21e5794bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 5
-  _container: {fileID: 1373223658}
-  _template: {fileID: 7091013710468193344, guid: d37e62a3642d44246b5a8400fcf23b86, type: 3}
+  _spawner: {fileID: 242451642}
   _DuplicateOffsetX: 0
   _particleSystem: {fileID: 1502161895}
 --- !u!136 &1373223657
@@ -21244,9 +21240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d556a44041fc9744ebff52f21e5794bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 5
-  _container: {fileID: 1589746577}
-  _template: {fileID: 7091013710468193344, guid: d37e62a3642d44246b5a8400fcf23b86, type: 3}
+  _spawner: {fileID: 242451642}
   _DuplicateOffsetX: 0
   _particleSystem: {fileID: 1502161895}
 --- !u!136 &1589746576

@@ -269,7 +269,6 @@ GameObject:
   - component: {fileID: -367921250104830518}
   - component: {fileID: -3133311398331410572}
   - component: {fileID: -7597976592032060402}
-  - component: {fileID: -1360313874710175202}
   - component: {fileID: 210755761737555334}
   m_Layer: 0
   m_Name: Stickman_sphere_Prisoner
@@ -378,20 +377,6 @@ MonoBehaviour:
   _speed: 3
   _coroutineDelay: 0.01
   IsCharged: 0
---- !u!136 &-1360313874710175202
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6215545185001656678}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &210755761737555334
 CapsuleCollider:
   m_ObjectHideFlags: 0

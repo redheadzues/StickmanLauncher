@@ -1,17 +1,18 @@
 using UnityEngine;
 
-public class MultiplyTable : ObjectsPool
+public class MultiplyTable : MonoBehaviour
 {
-    [SerializeField] private GameObject _template;
+    [SerializeField] private AlliedSpawner _spawner;
     [SerializeField] private float _DuplicateOffsetX;
     [SerializeField] private ParticleSystem _particleSystem;
 
     private StickmanFlightOperator _lastDuplicate;
 
-    private void Awake()
+    private void OnValidate()
     {
-        InitializePool(_template);
+        _spawner = FindObjectOfType<AlliedSpawner>();
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,13 +23,14 @@ public class MultiplyTable : ObjectsPool
                 MultyplierStickman(flyOperator.Direction, collisionPoint);
                 _particleSystem.transform.position = collisionPoint;
                 _particleSystem.Play();
-            }
-                
+            }                
     }
 
     private void MultyplierStickman(Vector3 direction, Vector3 point)
     {
-        if(TryGetObject(out GameObject stickman))
+        GameObject stickman = _spawner.GetTemplate();
+
+        if(stickman != null)
         {
             if(stickman.gameObject.TryGetComponent<StickmanFlightOperator>(out StickmanFlightOperator flyOperator))
             {
