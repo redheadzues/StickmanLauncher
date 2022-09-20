@@ -15,7 +15,6 @@ public class UIPanelEndLevel : MonoBehaviour
     [SerializeField] private Button _buttonWithoutAd;
     [SerializeField] private int _winReward;
     [SerializeField] private int _defeatReward;
-    [SerializeField] private PlayerWallet _playerWallet;
 
     private const string c_Win = "Win";
     private const string c_Defeat = "Defeat";
@@ -32,7 +31,6 @@ public class UIPanelEndLevel : MonoBehaviour
         _buttonWithoutAd.onClick.AddListener(OButtonWithoutAdClick);
         _eventer.Defeated += OnDefeat;
         _eventer.Won += OnWon;
-        _playerWallet = FindObjectOfType<PlayerWallet>();
     }
 
     private void OnDisable()
@@ -49,8 +47,6 @@ public class UIPanelEndLevel : MonoBehaviour
         _textReward.text = _winReward.ToString();
         _buttonReward.gameObject.SetActive(true);
         _buttonRetry.gameObject.SetActive(false);
-        _playerWallet.AddMoney(_winReward);
-
     }
 
     public void OnDefeat()
@@ -60,7 +56,6 @@ public class UIPanelEndLevel : MonoBehaviour
         _textReward.text = _defeatReward.ToString();
         _buttonRetry.gameObject.SetActive(true);
         _buttonReward.gameObject.SetActive(false);
-        _playerWallet.AddMoney(_defeatReward);
     }
 
     private void OnButtonRewardClick()
