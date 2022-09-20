@@ -38,6 +38,11 @@ public class StickmanFlightOperator : StickmanAnimator
         Direction = direction; 
     }
 
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void Fly(Vector3 direction)
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, _speed * Time.deltaTime);
