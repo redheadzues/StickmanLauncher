@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelFinisher : MonoBehaviour
@@ -14,6 +11,7 @@ public class LevelFinisher : MonoBehaviour
     {
         _eventer = FindObjectOfType<LevelEvent>();
         _spawnersContainer = FindObjectOfType<SpawnersContainer>();
+        _particles = FindObjectOfType<CongratulationParticleContainer>();
     }
 
     private void OnEnable()

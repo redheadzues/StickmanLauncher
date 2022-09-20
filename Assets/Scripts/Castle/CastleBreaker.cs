@@ -9,6 +9,8 @@ public abstract class CastleBreaker : MonoBehaviour
 
     private int _currentPartIndex;
 
+    public float PercentBreaked => ((_parts.Count - _currentPartIndex) * 100 )/_parts.Count;
+
     public event Action<float, float> PartBreacked;
     public event Action CastleBreacked;
 

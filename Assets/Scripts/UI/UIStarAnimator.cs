@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class StarAnimator : MonoBehaviour
+public class UIStarAnimator : MonoBehaviour
 {
     private Animator _animator;
     private const string c_AppearStar = "AppearStar";
