@@ -7,13 +7,12 @@ public class LevelFinisher : MonoBehaviour
 {
     [SerializeField] private LevelEvent _eventer;
     [SerializeField] private SpawnersContainer _spawnersContainer;
-    [SerializeField] private PlayerWallet _playerWallet;
+    
 
     private void OnValidate()
     {
         _eventer = FindObjectOfType<LevelEvent>();
         _spawnersContainer = FindObjectOfType<SpawnersContainer>();
-        _playerWallet = FindObjectOfType<PlayerWallet>();
     }
 
     private void OnEnable()
@@ -30,11 +29,16 @@ public class LevelFinisher : MonoBehaviour
 
     private void OnDefeat()
     {
-        
+        DeactivateSpawners();
     }
 
     private void OnWon()
     {
-        
+        DeactivateSpawners();
+    }
+
+    private void DeactivateSpawners()
+    {
+        _spawnersContainer.gameObject.SetActive(false);
     }
 }
