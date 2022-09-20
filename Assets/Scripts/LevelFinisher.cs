@@ -7,6 +7,7 @@ public class LevelFinisher : MonoBehaviour
 {
     [SerializeField] private LevelEvent _eventer;
     [SerializeField] private SpawnersContainer _spawnersContainer;
+    [SerializeField] private CongratulationParticleContainer _particles;
     
 
     private void OnValidate()
@@ -19,6 +20,7 @@ public class LevelFinisher : MonoBehaviour
     {
         _eventer.Defeated += OnDefeat;
         _eventer.Won += OnWon;
+        _particles.gameObject.SetActive(false);
     }
 
     private void OnDisable()
@@ -35,6 +37,7 @@ public class LevelFinisher : MonoBehaviour
     private void OnWon()
     {
         DeactivateSpawners();
+        _particles.gameObject.SetActive(true);
     }
 
     private void DeactivateSpawners()
