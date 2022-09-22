@@ -1,51 +1,31 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(StickmanLauncher))]
-public class StickmanCharger : MonoBehaviour
+public class StickmanCharger : MonoBehaviour, IDoJob
 {    
     [SerializeField] private AlliedSpawner _spawner;
     [SerializeField] private Vector3 _localPointToSetPosition;
 
-    private GameObject _lastSpawned;
-    private GameObject _waitingForCharge;
-    private StickmanLauncher _launcher;
-
-    public event UnityAction<GameObject> Charged;
+    private StickmanFlightOperator _lastSpawned;
+    private StickmanFlightOperator _waitingForCharge;
+    private Transform _launcher;
 
     private void Awake()
     {
-        _launcher = GetComponent<StickmanLauncher>();
+        _launcher = GetComponent<StickmanLauncher>().transform;
+        _lastSpawned = _spawner.DoJob();
     }
 
-    private void OnEnable()
+    public StickmanFlightOperator DoJob()
     {
-        _launcher.Successfully += OnLaunchSuccessfully;
-        _spawner.Instantiated += OnInstantiated;
-    }
-
-    private void OnDisable()
-    {
-        _launcher.Successfully -= OnLaunchSuccessfully;
-        _spawner.Instantiated -= OnInstantiated;
-    }
-
-    private void OnInstantiated(GameObject stickman)
-    {
-        _lastSpawned = stickman;
-
-        if (_waitingForCharge == null)
-            _waitingForCharge = stickman;
-    }
-
-    private void OnLaunchSuccessfully()
-    {
-        _waitingForCharge.transform.SetParent(_launcher.transform);
-        _waitingForCharge.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        _waitingForCharge.transform.localPosition = _localPointToSetPosition;                
-
-        Charged?.Invoke(_waitingForCharge);
-
         _waitingForCharge = _lastSpawned;
+
+        _waitingForCharge.transform.SetParent(_launcher);
+        _waitingForCharge.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        _waitingForCharge.transform.localPosition = _localPointToSetPosition;
+
+        _lastSpawned = _spawner.DoJob();
+
+        return _waitingForCharge;
     }
 }

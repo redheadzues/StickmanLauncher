@@ -1,53 +1,47 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(StickmanCharger))]
 public class StickmanLauncher : DirectionFinder
 {
     [SerializeField] private ElasticTensioner _elasticTensioner;
     [SerializeField] private float _launchPoint;
+    [SerializeField] private IDoJob _charger;
 
     private StickmanFlightOperator _lastCharged;
-    private StickmanCharger _charger;
-
-    public event UnityAction Successfully;
 
     private void Awake()
     {
-        _charger = GetComponent<StickmanCharger>();
+        _charger = GetComponent<IDoJob>();
     }
 
     private void OnEnable()
     {
         _elasticTensioner.DragFinished += OnDragFinished;
-        _charger.Charged += OnCharged;
     }
 
     private void Start()
     {
-        Successfully?.Invoke();
+        Charging(_charger.DoJob());
     }
 
     private void OnDisable()
     {
         _elasticTensioner.DragFinished -= OnDragFinished;
-        _charger.Charged -= OnCharged;
     }
 
-    private void OnCharged(GameObject stickman)
+    private void Charging(StickmanFlightOperator stickman)
     {
-        if(stickman.TryGetComponent(out StickmanFlightOperator flyOperator))
-            _lastCharged = flyOperator;
-
         if (stickman.TryGetComponent(out StickmanAppearer appear))
             appear.IsCharged = true;
 
+        _lastCharged = stickman;
     }
 
     private void OnDragFinished()
     {
         if (TryLaunch())
-            Successfully?.Invoke();
+            Charging(_charger.DoJob());
+
     }
 
     private bool TryLaunch()
