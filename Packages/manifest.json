@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.agava.vkgames": "file:C:/Users/Lenovo/Desktop/New Folder/com.agava.vkgames-main",
     "com.agava.webutility": "file:C:/Users/Lenovo/Desktop/New folder/com.agava.webutility-master",
     "com.agava.yandexgames": "file:C:/Users/Lenovo/Desktop/New folder/com.agava.yandexgames-master",
     "com.unity.2d.sprite": "1.0.0",
