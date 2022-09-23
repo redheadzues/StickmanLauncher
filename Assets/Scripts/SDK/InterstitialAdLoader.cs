@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InterstitialAdLoader : MonoBehaviour
 {
     [SerializeField] private SDKIntegration _sdkIntegration;
+    
+    private static float _lastTimeAdShow;
+    private float _delayAd = 120;
 
     private void OnValidate()
     {
@@ -13,9 +14,13 @@ public class InterstitialAdLoader : MonoBehaviour
 
     public void TryShowInterstitialAd()
     {
-        print("im trying)");
-        _sdkIntegration.ShowInterstitialAd(onCloseCallback: OnCloseCallback);
-
+        if((_lastTimeAdShow == 0) || (_lastTimeAdShow + _delayAd < Time.time))
+        {
+            _sdkIntegration.ShowInterstitialAd(onCloseCallback: OnCloseCallback);
+            _lastTimeAdShow = Time.time;
+        }
+        else
+            SceneLoader.LoadNextScene();      
     }
 
     private void OnCloseCallback(bool wasShawn)
