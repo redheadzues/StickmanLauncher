@@ -15,6 +15,8 @@ public class UIPanelEndLevel : MonoBehaviour
     [SerializeField] private Button _buttonWithoutAd;
     [SerializeField] private int _winReward;
     [SerializeField] private int _defeatReward;
+    [SerializeField] private SDKIntegration _sdkIntegration;
+    [SerializeField] private InterstitialAdLoader _interstitialAdLoader;
 
     private const string c_Win = "Win";
     private const string c_Defeat = "Defeat";
@@ -22,13 +24,15 @@ public class UIPanelEndLevel : MonoBehaviour
     private void OnValidate()
     {
         _eventer = FindObjectOfType<LevelEvent>();
+        _interstitialAdLoader = FindObjectOfType<InterstitialAdLoader>();
     }
 
     private void OnEnable()
     {
         _buttonReward.onClick.AddListener(OnButtonRewardClick);
         _buttonRetry.onClick.AddListener(OnButtonRetryClick);
-        _buttonWithoutAd.onClick.AddListener(OButtonWithoutAdClick);
+        _buttonWithoutAd.onClick.AddListener(OnButtonWithoutAdClick);
+        _sdkIntegration = FindObjectOfType<SDKIntegration>();
         _eventer.Defeated += OnDefeat;
         _eventer.Won += OnWon;
     }
@@ -37,7 +41,7 @@ public class UIPanelEndLevel : MonoBehaviour
     {
         _buttonReward.onClick.RemoveListener(OnButtonRewardClick);
         _buttonRetry.onClick.RemoveListener(OnButtonRetryClick);
-        _buttonWithoutAd.onClick.RemoveListener(OButtonWithoutAdClick);
+        _buttonWithoutAd.onClick.RemoveListener(OnButtonWithoutAdClick);
     }
 
     public void OnWon()
@@ -60,12 +64,12 @@ public class UIPanelEndLevel : MonoBehaviour
 
     private void OnButtonRewardClick()
     {
-
+        _sdkIntegration.ShowRewardVideo();
     }
 
-    private void OButtonWithoutAdClick()
+    private void OnButtonWithoutAdClick()
     {
-        SceneLoader.LoadNextScene();
+        _interstitialAdLoader.TryShowInterstitialAd();
         gameObject.SetActive(false);
     }
 
