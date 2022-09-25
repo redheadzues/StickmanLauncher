@@ -60,7 +60,6 @@ public class SDKIntegration : MonoBehaviour
     private void OnAdOpened()
     {
         AudioListener.pause = true;
-        Debug.Log("Opened Interestial Ad " + AudioListener.pause);
     }
 
     private void OnVideoOpenCallback()

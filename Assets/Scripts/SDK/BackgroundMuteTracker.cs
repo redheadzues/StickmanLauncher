@@ -6,6 +6,11 @@ public class BackgroundMuteTracker : MonoBehaviour
 {
     [SerializeField] private SDKIntegration _sdkIntegration;
 
+    private void OnValidate()
+    {
+        _sdkIntegration = FindObjectOfType<SDKIntegration>();
+    }
+
     private void OnEnable()
     {
         _sdkIntegration.VideoOpened += OnVideoOpened;
