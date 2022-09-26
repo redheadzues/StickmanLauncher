@@ -32,7 +32,7 @@ public class ButtonOpenLeaderboard : MonoBehaviour
     private void OpenLeaderboard()
     {
 #if !UNITY_EDITOR
-        if (YandexGamesSdk.IsInitialized == true)
+        if ((YandexGamesSdk.IsInitialized == true) && (PlayerAccount.IsAuthorized == true))
             _leaderboard.gameObject.SetActive(true);
         else
             PlayerAccount.Authorize(OpenLeaderboard);

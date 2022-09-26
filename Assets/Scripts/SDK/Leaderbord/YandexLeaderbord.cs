@@ -10,6 +10,8 @@ public class YandexLeaderbord : MonoBehaviour
 
     private const string _leaderboardName = "SLLeaderboard";
 
+    private List<GameObject> _displayedScores = new List<GameObject>();
+
     private void OnEnable()
     {
 #if !UNITY_EDITOR
@@ -39,6 +41,8 @@ public class YandexLeaderbord : MonoBehaviour
 
     private void FillLeaderbord()
     {
+        ClearLeaderboard();
+
         Leaderboard.GetEntries(_leaderboardName, (result) =>
         {
             int resultsAmount = result.entries.Length;
@@ -59,14 +63,25 @@ public class YandexLeaderbord : MonoBehaviour
         });
     }
 
+    private void ClearLeaderboard()
+    {
+        for(int i = 0; i < _displayedScores.Count; i++)
+            Destroy(_displayedScores[i]);
+
+        _displayedScores = new List<GameObject>();
+    }
+
     private void ConsctructScoreView(string name, int score)
     {
         ScoreView scoreView = Instantiate(_scoreView, _container);
         scoreView.Initialize(name, score);
+        _displayedScores.Add(scoreView.gameObject);
     }
 
     private void TestingFill()
     {
+        ClearLeaderboard();
+
         for (int i = 0; i < 5; i++)
             ConsctructScoreView("name", i);
     }

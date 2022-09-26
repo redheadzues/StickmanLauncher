@@ -16,7 +16,7 @@ public class InterstitialAdLoader : MonoBehaviour
     {
         if((_lastTimeAdShow == 0) || (_lastTimeAdShow + _delayAd < Time.time))
         {
-            _sdkIntegration.ShowInterstitialAd(onCloseCallback: OnCloseCallback);
+            _sdkIntegration.ShowInterstitialAd(onCloseCallback: OnCloseCallback, onErrorCallback: OnErrorCallback);
             _lastTimeAdShow = Time.time;
         }
         else
@@ -25,6 +25,12 @@ public class InterstitialAdLoader : MonoBehaviour
 
     private void OnCloseCallback(bool wasShawn)
     {
+        SceneLoader.LoadNextScene();
+    }
+
+    private void OnErrorCallback(string error)
+    {
+        print(error);
         SceneLoader.LoadNextScene();
     }
 }
