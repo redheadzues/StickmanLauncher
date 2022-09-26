@@ -5,15 +5,6 @@ using Agava.YandexGames;
 
 public class Authorization : MonoBehaviour
 {   
-    public void TryGetProfileData()
-    {
-        if (YandexGamesSdk.IsInitialized == true)
-            PlayerAccount.RequestPersonalProfileDataPermission(OnSuccsessAuthorization, OnError);
-        else
-            print("not initialized");
-
-    }
-
     public void TryAutorize()
     {
         PlayerAccount.Authorize(OnSuccsessAuthorization, OnError);
