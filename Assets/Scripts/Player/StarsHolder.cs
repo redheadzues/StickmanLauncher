@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class StarsHolder : MonoBehaviour
 {
+    private YandexLeaderbord _leaderboard;
     private int _stars;
+
+    private void OnValidate()
+    {
+        _leaderboard = FindObjectOfType<YandexLeaderbord>();
+    }
 
     private void Start()
     {
@@ -20,5 +26,6 @@ public class StarsHolder : MonoBehaviour
     {
         _stars = value;
         SaveProgress.Stars = _stars;
+        _leaderboard.AddPlayerScore(_stars);
     }
 }

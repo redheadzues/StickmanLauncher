@@ -12,10 +12,12 @@ public class UIRankStarDisplayer : MonoBehaviour
     [SerializeField] private float _valueToGetTwoStarPercent;
     [SerializeField] private float _valueToGetOneStarPercent;
 
+    private StarsHolder _starsHolder;
     private int _displayStarsCount;
 
     private void OnValidate()
     {
+        _starsHolder = FindObjectOfType<StarsHolder>();
         _eventer = FindObjectOfType<LevelEvent>();
         _alliedCastleBreaker = FindObjectOfType<AlliedCastleBreacker>();
         _starAnimators = GetComponentsInChildren<UIStarAnimator>();
@@ -59,6 +61,8 @@ public class UIRankStarDisplayer : MonoBehaviour
 
         if (_alliedCastleBreaker.PercentBreaked > _valueToGetOneStarPercent)
             _displayStarsCount++;
+
+        _starsHolder.AddStars(_displayStarsCount);
     }
 
     private IEnumerator DisplayStars()
