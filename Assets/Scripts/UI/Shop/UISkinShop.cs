@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.UI;
+using System;
 
 public abstract class UISkinShop : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public abstract class UISkinShop : MonoBehaviour
     [SerializeField] private PlayerWallet _playerWallet;
 
     protected List<UISkinView> _views = new List<UISkinView>();
+    protected event Action<UISkinView> SkinBuyed;
 
     private void OnValidate()
     {
@@ -57,7 +57,8 @@ public abstract class UISkinShop : MonoBehaviour
         {
             view.BuyButtonClicked -= OnSkinBuyed;
             view.Skin.Buy();
-            RefreshViewButton();
+            SkinBuyed?.Invoke(view);
+            //RefreshViewButton();
         }
     }
 

@@ -5,6 +5,8 @@ public class UICustomizer : UISkinShop
     {
         for (int i = 0; i < _views.Count; i++)
             _views[i].Equiped += OnEquiped;
+
+        SkinBuyed += OnEquiped;
     }
 
     private void OnDisable()
