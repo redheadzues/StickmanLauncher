@@ -8,6 +8,7 @@ public class StickmanFlightOperator : StickmanAnimator
     [SerializeField] private SpawnerDeathParticle _deathParticle;
     
     private Coroutine _coroutine;
+    private float _positionY = 1.5f;
     public Vector3 Direction { get; private set; }
 
     private void OnEnable()
@@ -46,7 +47,7 @@ public class StickmanFlightOperator : StickmanAnimator
     private void Fly(Vector3 direction)
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, _speed * Time.deltaTime);
-        print(direction);
+        transform.position = ClampPositionY(transform.position);
     }
 
     private void RotateOnDirection(Vector3 direction)
@@ -58,6 +59,11 @@ public class StickmanFlightOperator : StickmanAnimator
     {
         PlayFly();
         RotateOnDirection(direction);
+    }
+
+    private Vector3 ClampPositionY(Vector3 position)
+    {
+        return new Vector3(position.x, _positionY, position.z);
     }
 
     private IEnumerator OnFlying(Vector3 direction)

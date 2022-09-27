@@ -4,10 +4,10 @@ using UnityEngine;
 public class MultiplyTable : MonoBehaviour
 {
     [SerializeField] private AlliedSpawner _spawner;
-    [SerializeField] private float _DuplicateOffsetX;
     [SerializeField] private ParticleSystem _particleSystem;
 
     private StickmanFlightOperator _lastDuplicate;
+    private float _DuplicateOffsetX = 2.5f;
 
     public event Action Duplicated;
 
@@ -16,10 +16,9 @@ public class MultiplyTable : MonoBehaviour
         _spawner = FindObjectOfType<AlliedSpawner>();
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent<StickmanFlightOperator>(out StickmanFlightOperator flyOperator))
+        if (collision.collider.TryGetComponent(out StickmanFlightOperator flyOperator))
             if (flyOperator != _lastDuplicate)
             {
                 Vector3 collisionPoint = collision.contacts[0].point;
@@ -36,7 +35,7 @@ public class MultiplyTable : MonoBehaviour
 
         if(stickman != null)
         {
-            if(stickman.gameObject.TryGetComponent<StickmanFlightOperator>(out StickmanFlightOperator flyOperator))
+            if(stickman.gameObject.TryGetComponent(out StickmanFlightOperator flyOperator))
             {
                 flyOperator.gameObject.SetActive(true);
                 flyOperator.transform.position = DefineDuplicatePosition(point);
