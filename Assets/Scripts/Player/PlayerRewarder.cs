@@ -55,8 +55,6 @@ public class PlayerRewarder : MonoBehaviour
 
     private void OnRewarded()
     {
-        print("Rewarding");
         _playerWallet.AddMoney(_winReward * _rewardMultiply);
-        print("Rewarded");
     }
 }

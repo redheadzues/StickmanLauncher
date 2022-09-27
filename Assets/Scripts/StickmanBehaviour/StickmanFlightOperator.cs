@@ -46,6 +46,7 @@ public class StickmanFlightOperator : StickmanAnimator
     private void Fly(Vector3 direction)
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, _speed * Time.deltaTime);
+        print(direction);
     }
 
     private void RotateOnDirection(Vector3 direction)

@@ -3,6 +3,7 @@ using UnityEngine;
 public class InterstitialAdLoader : MonoBehaviour
 {
     [SerializeField] private SDKIntegration _sdkIntegration;
+    [SerializeField] private EnemyCastleBreaker _enemyCastleBreaker;
     
     private static float _lastTimeAdShow;
     private float _delayAd = 120;
@@ -10,27 +11,25 @@ public class InterstitialAdLoader : MonoBehaviour
     private void OnValidate()
     {
         _sdkIntegration = FindObjectOfType<SDKIntegration>();
+        _enemyCastleBreaker = FindObjectOfType<EnemyCastleBreaker>();
+    }
+
+    private void OnEnable()
+    {
+        _enemyCastleBreaker.CastleBreacked += TryShowInterstitialAd;
+    }
+
+    private void OnDisable()
+    {
+        _enemyCastleBreaker.CastleBreacked -= TryShowInterstitialAd;
     }
 
     public void TryShowInterstitialAd()
     {
         if((_lastTimeAdShow == 0) || (_lastTimeAdShow + _delayAd < Time.time))
         {
-            _sdkIntegration.ShowInterstitialAd(onCloseCallback: OnCloseCallback, onErrorCallback: OnErrorCallback);
+            _sdkIntegration.ShowInterstitialAd();
             _lastTimeAdShow = Time.time;
-        }
-        else
-            SceneLoader.LoadNextScene();      
-    }
-
-    private void OnCloseCallback(bool wasShawn)
-    {
-        SceneLoader.LoadNextScene();
-    }
-
-    private void OnErrorCallback(string error)
-    {
-        print($"Error {error}");
-        SceneLoader.LoadNextScene();
+        }    
     }
 }

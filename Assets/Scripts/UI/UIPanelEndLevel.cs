@@ -16,7 +16,6 @@ public class UIPanelEndLevel : MonoBehaviour
     [SerializeField] private int _winReward;
     [SerializeField] private int _defeatReward;
     [SerializeField] private SDKIntegration _sdkIntegration;
-    [SerializeField] private InterstitialAdLoader _interstitialAdLoader;
 
     private const string c_Win = "Win";
     private const string c_Defeat = "Defeat";
@@ -24,7 +23,6 @@ public class UIPanelEndLevel : MonoBehaviour
     private void OnValidate()
     {
         _eventer = FindObjectOfType<LevelEvent>();
-        _interstitialAdLoader = FindObjectOfType<InterstitialAdLoader>();
     }
 
     private void OnEnable()
@@ -69,7 +67,7 @@ public class UIPanelEndLevel : MonoBehaviour
 
     private void OnButtonWithoutAdClick()
     {
-        _interstitialAdLoader.TryShowInterstitialAd();
+        SceneLoader.LoadNextScene();
         gameObject.SetActive(false);
     }
 
