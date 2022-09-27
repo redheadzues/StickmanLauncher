@@ -30,7 +30,7 @@ public class InterstitialAdLoader : MonoBehaviour
 
     private void OnErrorCallback(string error)
     {
-        print(error);
+        print($"Error {error}");
         SceneLoader.LoadNextScene();
     }
 }
