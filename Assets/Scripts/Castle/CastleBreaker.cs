@@ -11,7 +11,8 @@ public abstract class CastleBreaker : MonoBehaviour
 
     public float PercentBreaked => ((_parts.Count - _currentPartIndex) * 100 )/_parts.Count;
 
-    public event Action<float, float> PartBreacked;
+    public event Action<float, float> PartBreacked_getData;
+    public event Action PartBreacked;
     public event Action CastleBreacked;
 
     private void OnValidate()
@@ -28,7 +29,8 @@ public abstract class CastleBreaker : MonoBehaviour
 
         _currentPartIndex++;
 
-        PartBreacked?.Invoke(_parts.Count - _currentPartIndex, _parts.Count);
+        PartBreacked_getData?.Invoke(_parts.Count - _currentPartIndex, _parts.Count);
+        PartBreacked?.Invoke();
 
         TryCompleteLevel();
     }

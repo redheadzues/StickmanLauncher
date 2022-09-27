@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class SpawnerDeathParticle : ObjectsPool
 {
     [SerializeField] private GameObject _template;
 
+    public event Action ParticleSetted;
 
     private void Start()
     {
@@ -14,6 +16,7 @@ public class SpawnerDeathParticle : ObjectsPool
     {
         ParticleSystem particle = GetParticle();
         particle.transform.position = position;
+        ParticleSetted?.Invoke();
     }
 
     private ParticleSystem GetParticle()

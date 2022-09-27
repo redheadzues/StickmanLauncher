@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MultiplyTable : MonoBehaviour
@@ -7,6 +8,8 @@ public class MultiplyTable : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
 
     private StickmanFlightOperator _lastDuplicate;
+
+    public event Action Duplicated;
 
     private void OnValidate()
     {
@@ -23,6 +26,7 @@ public class MultiplyTable : MonoBehaviour
                 MultyplierStickman(flyOperator.Direction, collisionPoint);
                 _particleSystem.transform.position = collisionPoint;
                 _particleSystem.Play();
+                Duplicated?.Invoke();
             }                
     }
 

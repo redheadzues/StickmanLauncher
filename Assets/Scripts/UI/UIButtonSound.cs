@@ -8,7 +8,7 @@ public class UIButtonSound : MonoBehaviour
     [SerializeField] private Sprite _spriteSoundOn;
 
     private Button _buttonSound;
-    private bool _isSoundPlay = true;
+    private static bool _isSoundPlay = true;
 
     private void Awake()
     {
@@ -18,6 +18,7 @@ public class UIButtonSound : MonoBehaviour
     private void OnEnable()
     {
         _buttonSound.onClick.AddListener(OnButtonSoundClick);
+        SetSprite();
     }
 
     private void OnDisable()
@@ -30,14 +31,22 @@ public class UIButtonSound : MonoBehaviour
         if(_isSoundPlay == true)
         {
             AudioListener.volume = 0;
-            _buttonSound.image.sprite = _spriteSoundOff;
             _isSoundPlay = false;
+            SetSprite();
         }
         else
         {
             AudioListener.volume = 1;
-            _buttonSound.image.sprite = _spriteSoundOn;
             _isSoundPlay = true;
+            SetSprite();
         }
+    }
+
+    private void SetSprite()
+    {
+        if(_isSoundPlay == true)
+            _buttonSound.image.sprite = _spriteSoundOn;
+        if(_isSoundPlay == false)
+            _buttonSound.image.sprite = _spriteSoundOff;
     }
 }

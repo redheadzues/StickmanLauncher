@@ -6,6 +6,7 @@ public class StickmanLauncher : DirectionFinder
 {
     [SerializeField] private ElasticTensioner _elasticTensioner;
     [SerializeField] private float _launchPoint;
+    
 
     private StickmanFlightOperator _lastCharged;
     private StickmanCharger _charger;
