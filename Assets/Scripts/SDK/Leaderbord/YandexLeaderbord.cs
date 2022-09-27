@@ -58,7 +58,7 @@ public class YandexLeaderbord : MonoBehaviour
 
                 int score = result.entries[i].score;
 
-                ConsctructScoreView(name, score);
+                ConsctructScoreView(i, name, score);
             }
         });
     }
@@ -71,10 +71,10 @@ public class YandexLeaderbord : MonoBehaviour
         _displayedScores = new List<GameObject>();
     }
 
-    private void ConsctructScoreView(string name, int score)
+    private void ConsctructScoreView(int number, string name, int score)
     {
         ScoreView scoreView = Instantiate(_scoreView, _container);
-        scoreView.Initialize(name, score);
+        scoreView.Initialize(number, name, score);
         _displayedScores.Add(scoreView.gameObject);
     }
 
@@ -83,6 +83,6 @@ public class YandexLeaderbord : MonoBehaviour
         ClearLeaderboard();
 
         for (int i = 0; i < 5; i++)
-            ConsctructScoreView("name", i);
+            ConsctructScoreView(i, "Name", Random.Range(10, 9999));
     }
 }
