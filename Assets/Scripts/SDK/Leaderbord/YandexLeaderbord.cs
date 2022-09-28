@@ -53,6 +53,8 @@ public class YandexLeaderbord : MonoBehaviour
             {
                 string name = result.entries[i].player.publicName;
 
+                print(name);
+
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymos";
 
