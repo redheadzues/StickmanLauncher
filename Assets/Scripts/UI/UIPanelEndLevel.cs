@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Lean.Localization;
 
 public class UIPanelEndLevel : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class UIPanelEndLevel : MonoBehaviour
     [SerializeField] private int _winReward;
     [SerializeField] private int _defeatReward;
     [SerializeField] private SDKIntegration _sdkIntegration;
+    [SerializeField] private LeanLocalizedTextMeshProUGUI _localization;
 
-    private const string c_Win = "Win";
+    private const string c_Win = "Victory";
     private const string c_Defeat = "Defeat";
+
 
     private void OnValidate()
     {
@@ -33,6 +36,7 @@ public class UIPanelEndLevel : MonoBehaviour
         _sdkIntegration = FindObjectOfType<SDKIntegration>();
         _eventer.Defeated += OnDefeat;
         _eventer.Won += OnWon;
+        print(_localization);
     }
 
     private void OnDisable()
@@ -45,7 +49,7 @@ public class UIPanelEndLevel : MonoBehaviour
     public void OnWon()
     {
         _imageResult.sprite = _spritePlayerWin;
-        _textResult.text = c_Win;
+        _localization.TranslationName = c_Win;
         _textReward.text = _winReward.ToString();
         _buttonReward.gameObject.SetActive(true);
         _buttonRetry.gameObject.SetActive(false);
@@ -54,7 +58,7 @@ public class UIPanelEndLevel : MonoBehaviour
     public void OnDefeat()
     {
         _imageResult.sprite = _spritePlayerDefeat;
-        _textResult.text = c_Defeat;
+        _localization.TranslationName = c_Defeat;
         _textReward.text = _defeatReward.ToString();
         _buttonRetry.gameObject.SetActive(true);
         _buttonReward.gameObject.SetActive(false);
