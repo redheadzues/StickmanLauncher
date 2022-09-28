@@ -36,7 +36,6 @@ public class UIPanelEndLevel : MonoBehaviour
         _sdkIntegration = FindObjectOfType<SDKIntegration>();
         _eventer.Defeated += OnDefeat;
         _eventer.Won += OnWon;
-        print(_localization);
     }
 
     private void OnDisable()
