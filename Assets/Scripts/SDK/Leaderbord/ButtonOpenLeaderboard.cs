@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Agava.YandexGames;
 
+[RequireComponent(typeof(Button))]
 public class ButtonOpenLeaderboard : MonoBehaviour
 {
     [SerializeField] private YandexLeaderbord _leaderboard;
@@ -17,6 +18,7 @@ public class ButtonOpenLeaderboard : MonoBehaviour
     {
         _buttonOpenLEaderBoard = GetComponent<Button>();
         _leaderboard.gameObject.SetActive(false);
+        gameObject.SetActive(false); 
     }
 
     private void OnEnable()

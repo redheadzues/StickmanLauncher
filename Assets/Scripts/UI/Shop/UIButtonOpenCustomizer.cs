@@ -16,6 +16,7 @@ public class UIButtonOpenCustomizer : MonoBehaviour
     private void Awake()
     {
         _buttonOpenCustomizer = GetComponent<Button>();
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
