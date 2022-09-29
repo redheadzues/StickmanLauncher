@@ -4,6 +4,8 @@ public static class SaveProgress
 {
     private const string c_Money = "Money";
     private const string c_Stars = "Stars";
+    private const string c_VolumeValue = "VolumeValue";
+    private const string c_EquipedSkinId = "EquipedSkinId";
 
     public static int Money
     {
@@ -29,5 +31,27 @@ public static class SaveProgress
         set { PlayerPrefs.SetInt(c_Stars, value); }
     }
 
+    public static float VolumeValue
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_VolumeValue))
+                return PlayerPrefs.GetFloat(c_VolumeValue);
+            else
+                return 1;
+        }
+        set { PlayerPrefs.SetFloat(c_VolumeValue, value); }
+    }
 
+    public static int EquipedSkinId
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_EquipedSkinId))
+                return PlayerPrefs.GetInt(c_EquipedSkinId);
+            else
+                return 0;
+        }
+        set { PlayerPrefs.SetInt(c_EquipedSkinId, value); }
+    }
 }

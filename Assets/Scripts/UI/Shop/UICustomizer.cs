@@ -21,6 +21,7 @@ public class UICustomizer : UISkinShop
             _views[i].Skin.Unequip();
 
         view.Skin.Equip();
+        SaveProgress.EquipedSkinId = view.Skin.Id;
 
         for (int i = 0; i < _views.Count; i++)
             _views[i].DisplayButton();

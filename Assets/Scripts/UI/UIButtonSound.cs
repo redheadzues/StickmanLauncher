@@ -8,11 +8,11 @@ public class UIButtonSound : MonoBehaviour
     [SerializeField] private Sprite _spriteSoundOn;
 
     private Button _buttonSound;
-    private static bool _isSoundPlay = true;
 
     private void Awake()
     {
         _buttonSound = GetComponent<Button>();
+        AudioListener.volume = SaveProgress.VolumeValue;
     }
 
     private void OnEnable()
@@ -26,27 +26,28 @@ public class UIButtonSound : MonoBehaviour
         _buttonSound.onClick.RemoveListener(OnButtonSoundClick);
     }
 
+
     private void OnButtonSoundClick()
     {
-        if(_isSoundPlay == true)
+        if(AudioListener.volume == 1)
         {
             AudioListener.volume = 0;
-            _isSoundPlay = false;
+            SaveProgress.VolumeValue = AudioListener.volume;
             SetSprite();
         }
         else
         {
             AudioListener.volume = 1;
-            _isSoundPlay = true;
+            SaveProgress.VolumeValue = AudioListener.volume;
             SetSprite();
         }
     }
 
     private void SetSprite()
     {
-        if(_isSoundPlay == true)
+        if(AudioListener.volume == 1)
             _buttonSound.image.sprite = _spriteSoundOn;
-        if(_isSoundPlay == false)
+        if (AudioListener.volume == 0)
             _buttonSound.image.sprite = _spriteSoundOff;
     }
 }

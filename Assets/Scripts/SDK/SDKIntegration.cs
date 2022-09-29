@@ -80,7 +80,6 @@ public class SDKIntegration : MonoBehaviour
     private void OnRewardedCallback()
     {
         Rewarded?.Invoke();
-        print("Invoked");
     }
 
     private void OnVideoErrorCallback(string message)

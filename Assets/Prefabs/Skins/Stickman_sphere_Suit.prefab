@@ -652,7 +652,7 @@ MonoBehaviour:
   _price: 0
   isBuyed: 1
   isEquiped: 1
-  Id: 7
+  Id: 0
 --- !u!1 &7091013710468193346
 GameObject:
   m_ObjectHideFlags: 0

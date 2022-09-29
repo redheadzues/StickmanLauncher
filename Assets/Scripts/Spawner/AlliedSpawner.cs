@@ -43,7 +43,7 @@ public class AlliedSpawner : ObjectsPool
     private void ChooseTemplate()
     {
         for(int i = 0; i < _templates.Count; i++)
-            if (_templates[i].IsEquiped == true)
+            if (_templates[i].Id == SaveProgress.EquipedSkinId)
             {
                 _template = _templates[i].gameObject;
                 return;

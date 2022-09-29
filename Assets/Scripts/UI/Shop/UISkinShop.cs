@@ -58,7 +58,6 @@ public abstract class UISkinShop : MonoBehaviour
             view.BuyButtonClicked -= OnSkinBuyed;
             view.Skin.Buy();
             SkinBuyed?.Invoke(view);
-            //RefreshViewButton();
         }
     }
 
