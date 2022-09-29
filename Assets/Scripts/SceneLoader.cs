@@ -13,9 +13,17 @@ public static class SceneLoader
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (currentSceneIndex == SceneManager.sceneCountInBuildSettings - 1)
-            SceneManager.LoadScene(0);
+        {
+            SaveProgress.LastLoadScene = 1;
+            SceneManager.LoadScene(1);
+        }
+
         else
+        {
+            SaveProgress.LastLoadScene = currentSceneIndex + 1;
             SceneManager.LoadScene(currentSceneIndex + 1);
+        }
+
 
     }
 }

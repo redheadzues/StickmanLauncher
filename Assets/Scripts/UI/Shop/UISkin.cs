@@ -6,8 +6,8 @@ public class UISkin : MonoBehaviour
     [SerializeField] private Sprite _spriteIcon;
     [SerializeField] private int _price;
     
-    private bool isBuyed = false;
-    private bool isEquiped = false;
+    private bool isBuyed;
+    private bool isEquiped;
     private static int _ids;
 
     public Sprite Icon => _spriteIcon;
@@ -17,6 +17,18 @@ public class UISkin : MonoBehaviour
     public int Price => _price;
 
     public int Id = ++_ids;
+
+    private string SetIsBuyed
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(GeneratePrefsKeyBuyed()))
+                return PlayerPrefs.GetString(GeneratePrefsKeyBuyed());
+            else
+                return "false";
+        }
+        set { PlayerPrefs.SetString(GeneratePrefsKeyBuyed(), value); }
+    }
 
     private void Awake()
     {
@@ -29,6 +41,7 @@ public class UISkin : MonoBehaviour
     public void Buy()
     {
         isBuyed = true;
+        SetIsBuyed = Convert.ToString(isBuyed);
     }
 
     public void Equip()
@@ -39,18 +52,6 @@ public class UISkin : MonoBehaviour
     public void Unequip()
     {
         isEquiped = false;
-    }
-
-    private string SetIsBuyed
-    {
-        get
-        {
-            if (PlayerPrefs.HasKey(GeneratePrefsKeyBuyed()))
-                return PlayerPrefs.GetString(GeneratePrefsKeyBuyed());
-            else
-                return "false";
-        }
-        set { PlayerPrefs.SetString(GeneratePrefsKeyBuyed(), value); }
     }
 
     private string GeneratePrefsKeyBuyed()
