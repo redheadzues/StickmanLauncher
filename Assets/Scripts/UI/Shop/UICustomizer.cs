@@ -4,7 +4,10 @@ public class UICustomizer : UISkinShop
     private void OnEnable()
     {
         for (int i = 0; i < _views.Count; i++)
+        {
             _views[i].Equiped += OnEquiped;
+            _views[i].DisplayButton();
+        }
 
         SkinBuyed += OnEquiped;
     }

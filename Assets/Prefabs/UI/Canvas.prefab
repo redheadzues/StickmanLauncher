@@ -94,13 +94,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skins:
-  - {fileID: -6892325670217716860, guid: d37e62a3642d44246b5a8400fcf23b86, type: 3}
-  - {fileID: 525180538255056457, guid: b92251cec53c12a4ca98e619f908cbaf, type: 3}
-  - {fileID: -2877428052104864796, guid: 6810331dcd1ab874297599b0bb26ff31, type: 3}
-  - {fileID: -2067240255073620181, guid: 8e9ab83424f745745b7620b3d8fbf9c4, type: 3}
-  - {fileID: -4294046828139578455, guid: 73a99725b26dd4f498080fe935cbb996, type: 3}
-  - {fileID: -3562571264088501032, guid: 2d754b5c5e957be4ca09992bd6400f43, type: 3}
-  - {fileID: -4783044785655594738, guid: a7a1b8156ac4d734189510481a1f4e8b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _viewTemplate: {fileID: 73358408538876218, guid: b1c0763b7fee66a4880d3bb872241c1f, type: 3}
   _container: {fileID: 1007790308}
   _playerWallet: {fileID: 0}

@@ -681,8 +681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteIcon: {fileID: 21300000, guid: 7c937e2acc6e97f45b5a5867069d058f, type: 3}
   _price: 2500
-  isBuyed: 0
   isEquiped: 0
+  isBuyed: 1
   Id: 6
 --- !u!114 &-2028385932989616881
 MonoBehaviour:

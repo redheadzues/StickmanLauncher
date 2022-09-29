@@ -10,12 +10,14 @@ public abstract class UISkinShop : MonoBehaviour
     [SerializeField] private GameObject _container;
     [SerializeField] private PlayerWallet _playerWallet;
 
+    
     protected List<UISkinView> _views = new List<UISkinView>();
     protected event Action<UISkinView> SkinBuyed;
 
     private void OnValidate()
     {
         _playerWallet = FindObjectOfType<PlayerWallet>();
+        _skins = FindObjectsOfType<UISkin>().ToList();
     }
 
     private void Awake()
