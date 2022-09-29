@@ -12,9 +12,10 @@ public class StarsHolder : MonoBehaviour
         _leaderboard = FindObjectOfType<YandexLeaderbord>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _stars = SaveProgress.Stars;
+        print(_stars);
     }
 
     public void AddStars(int value)

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Agava.YandexGames;
@@ -53,14 +52,12 @@ public class YandexLeaderbord : MonoBehaviour
             {
                 string name = result.entries[i].player.publicName;
 
-                print(name);
-
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymos";
 
                 int score = result.entries[i].score;
 
-                ConsctructScoreView(i, name, score);
+                ConsctructScoreView(i + 1, name, score);
             }
         });
     }
