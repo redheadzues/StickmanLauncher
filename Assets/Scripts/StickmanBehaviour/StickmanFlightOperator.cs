@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class StickmanFlightOperator : StickmanAnimator
 {
-    [SerializeField] private float _speed;
     [SerializeField] private float _coroutineDelay;
     [SerializeField] private SpawnerDeathParticle _deathParticle;
     
+    private float _speed = 20;
     private Coroutine _coroutine;
     private float _positionY = 1.5f;
     public Vector3 Direction { get; private set; }
