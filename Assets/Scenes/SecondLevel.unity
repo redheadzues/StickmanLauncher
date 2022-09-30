@@ -571,11 +571,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coroutineDelay: 0.01
-  _positionVerticalMax: 2
   _positionVerticalStayClosed: -0.62
-  _positionVerticalStayOpened: 1.9
-  _speed: 10
-  _currentTargetIndex: 0
+  _positionVerticalStayOpened: 1.5
+  _freezePositionTime: 2
+  _speed: 2
+  _isOpenedOnStart: 0
 --- !u!65 &65301598
 BoxCollider:
   m_ObjectHideFlags: 0

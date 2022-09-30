@@ -1484,7 +1484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209900283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.18, y: 1.96, z: -9.83}
+  m_LocalPosition: {x: 3.18, y: 1, z: -9.83}
   m_LocalScale: {x: 0.5, y: 3, z: 4.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2501,7 +2501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336188273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 2.01, z: -10.18}
+  m_LocalPosition: {x: -5, y: 1, z: -10.18}
   m_LocalScale: {x: 0.5, y: 3, z: 4.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6472,7 +6472,6 @@ GameObject:
   - component: {fileID: 1015917513}
   - component: {fileID: 1015917512}
   - component: {fileID: 1015917511}
-  - component: {fileID: 1015917510}
   - component: {fileID: 1015917509}
   - component: {fileID: 1015917508}
   m_Layer: 0
@@ -6510,24 +6509,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1015917510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015917507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1365170a5dfdf3548b67217341c8e374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coroutineDelay: 0.01
-  _positionVerticalMax: 3
-  _positionVerticalStayClosed: 0.17
-  _positionVerticalStayOpened: 2.75
-  _speed: 0
-  _currentTargetIndex: 0
 --- !u!65 &1015917511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6599,7 +6580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015917507}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.2100005, y: 1.97, z: -9.860001}
+  m_LocalPosition: {x: 3.2100005, y: 1, z: -9.860001}
   m_LocalScale: {x: 4.5, y: 3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7197,7 +7178,6 @@ GameObject:
   - component: {fileID: 1124501701}
   - component: {fileID: 1124501700}
   - component: {fileID: 1124501699}
-  - component: {fileID: 1124501698}
   - component: {fileID: 1124501697}
   - component: {fileID: 1124501696}
   m_Layer: 0
@@ -7235,24 +7215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1124501698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124501695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1365170a5dfdf3548b67217341c8e374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coroutineDelay: 0.01
-  _positionVerticalMax: 3
-  _positionVerticalStayClosed: 0.17
-  _positionVerticalStayOpened: 2.75
-  _speed: 0
-  _currentTargetIndex: 0
 --- !u!65 &1124501699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7324,7 +7286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124501695}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.97, y: 2.02, z: -10.170001}
+  m_LocalPosition: {x: -4.97, y: 0.99, z: -10.170001}
   m_LocalScale: {x: 4.5, y: 3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19511,11 +19473,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coroutineDelay: 0.01
-  _positionVerticalMax: 2
   _positionVerticalStayClosed: -0.62
-  _positionVerticalStayOpened: 1.9
-  _speed: 10
-  _currentTargetIndex: 0
+  _positionVerticalStayOpened: 1.5
+  _freezePositionTime: 2
+  _speed: 2
+  _isOpenedOnStart: 0
 --- !u!65 &1544117183
 BoxCollider:
   m_ObjectHideFlags: 0
