@@ -34,13 +34,14 @@ public class ButtonOpenLeaderboard : MonoBehaviour
     private void OpenLeaderboard()
     {
 #if !UNITY_EDITOR
+        PlayerAccount.RequestPersonalProfileDataPermission();
+
         if ((YandexGamesSdk.IsInitialized == true) && (PlayerAccount.IsAuthorized == true))
-        {
-            PlayerAccount.RequestPersonalProfileDataPermission();    
+        {  
             _leaderboard.gameObject.SetActive(true);
         }
         else
-        {
+        {            
             PlayerAccount.Authorize(OpenLeaderboard);
         }
 

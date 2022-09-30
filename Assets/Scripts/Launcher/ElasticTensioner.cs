@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ElasticTensioner : MonoBehaviour
 {
+    [SerializeField] private float _reloadTime;
+
     private float _minPointX = -4;
     private float _maxPointX = 3;
     private float _minPointZ = -27;
@@ -14,12 +16,38 @@ public class ElasticTensioner : MonoBehaviour
     private float _distance;
     private Vector3 _offset;
     private Vector3 _basePosition;
+    private float _lastTimeShot;
+    private StickmanLauncher _launcher;
 
-    public event UnityAction DragStarted;
-    public event UnityAction DragFinished;
+    public event Action DragStarted;
+    public event Action DragFinished;
+    public event Action ReloadTimeChanged;
+
+    public float ReloadTime => _reloadTime;
+
+    private void OnValidate()
+    {
+        _launcher = FindObjectOfType<StickmanLauncher>();
+    }
+
+    private void OnEnable()
+    {
+        _launcher.Successfully += OnSuccessfully;
+    }
+
+    private void OnDisable()
+    {
+        _launcher.Successfully -= OnSuccessfully;
+    }
+
+    private void OnSuccessfully()
+    {
+        _lastTimeShot = Time.time;
+    }
 
     private void Start()
     {
+        _lastTimeShot = -_reloadTime;
         _rigidbody = GetComponent<Rigidbody>();
         _basePosition = transform.position;
     }
@@ -28,7 +56,6 @@ public class ElasticTensioner : MonoBehaviour
     {
         _rigidbody.isKinematic = true;
         transform.rotation = Quaternion.Euler(Vector3.zero);
-
         _startDragPoint = GetRayPoint();
         DragStarted?.Invoke();
     }
@@ -59,6 +86,11 @@ public class ElasticTensioner : MonoBehaviour
     private void OnMouseUp()
     {
         _rigidbody.isKinematic = false;
-        DragFinished?.Invoke();
+
+        if (Time.time > _lastTimeShot + _reloadTime)
+        {
+            DragFinished?.Invoke();
+            ReloadTimeChanged?.Invoke();
+        }
     }
 }
