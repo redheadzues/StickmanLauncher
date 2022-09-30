@@ -5,67 +5,59 @@ using UnityEngine;
 public class DeskLifter : MonoBehaviour
 {
     [SerializeField] private float _coroutineDelay;
-    [SerializeField] private float _positionVerticalMax;
     [SerializeField] private float _positionVerticalStayClosed;
     [SerializeField] private float _positionVerticalStayOpened;
+    [SerializeField] private float _freezePositionTime;
     [SerializeField] private float _speed;
-    [SerializeField] private int _currentTargetIndex;
+    [SerializeField] private bool _isOpenedOnStart;
 
-    private Vector3 _target;
-    private List<float> _targets;
-    private int _aviodLimitException = 1;
+    private Vector3 _targetPosition;
 
     private void Awake()
     {
-        _targets = new List<float>();
-        InitializeTargetsList();
-    }
+        if (_isOpenedOnStart == true)
+            transform.position = GetTargetPosition(_positionVerticalStayOpened);
+        else
+            transform.position = GetTargetPosition(_positionVerticalStayClosed);
 
-    private void Start()
-    {
-        _target = transform.position;
+
         StartCoroutine(OnMove());
     }
 
-    private void InitializeTargetsList()
+    private Vector3 GetTargetPosition(float positionVertical)
     {
-        _targets.Add(_positionVerticalStayClosed);
-        _targets.Add(_positionVerticalMax);
-        _targets.Add(_positionVerticalStayOpened);
+        return new Vector3(transform.position.x, positionVertical, transform.position.z);
     }
 
-    private void MoveToTargetPosition()
+    private void SetTargetPosition()
     {
-        transform.position = Vector3.Lerp(transform.position, _target, _speed * Time.deltaTime);
+        if (transform.position.y == _positionVerticalStayOpened)
+            _targetPosition = GetTargetPosition(_positionVerticalStayClosed);
+        else 
+            _targetPosition = GetTargetPosition(_positionVerticalStayOpened);
     }
 
-    private void ChangeCurrentTargetIndex()
+    private void Move()
     {
-        if (_currentTargetIndex == (_targets.Count - _aviodLimitException))
-            _currentTargetIndex = 0;
-        else
-            _currentTargetIndex++;
-    }
-
-    private void ChangeTarget()
-    {
-        _target = new Vector3(transform.position.x, _targets[_currentTargetIndex], transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
     }
 
     private IEnumerator OnMove()
     {
-        var delay = new WaitForSeconds(_coroutineDelay);
+        SetTargetPosition();
 
-        while(true)
+        while (true)
         {
-            MoveToTargetPosition();
-            yield return delay;
+            Move();
 
-            if(transform.position == _target)
+            if (transform.position == _targetPosition)
             {
-                ChangeCurrentTargetIndex();
-                ChangeTarget();
+                yield return new WaitForSeconds(_freezePositionTime);
+                SetTargetPosition();
             }
+
+            yield return new WaitForSeconds(_coroutineDelay);
+
         }
     }
 }
