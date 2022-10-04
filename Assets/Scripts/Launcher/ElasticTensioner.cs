@@ -21,9 +21,9 @@ public class ElasticTensioner : MonoBehaviour
 
     public event Action DragStarted;
     public event Action DragFinished;
-    public event Action ReloadTimeChanged;
+    public event Action<float> ReloadStarted;
+    public event Action LaunchFailed;
 
-    public float ReloadTime => _reloadTime;
 
     private void OnValidate()
     {
@@ -90,7 +90,9 @@ public class ElasticTensioner : MonoBehaviour
         if (Time.time > _lastTimeShot + _reloadTime)
         {
             DragFinished?.Invoke();
-            ReloadTimeChanged?.Invoke();
+            ReloadStarted?.Invoke(_reloadTime);
         }
+        else
+            LaunchFailed?.Invoke();
     }
 }
