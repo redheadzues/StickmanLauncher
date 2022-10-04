@@ -1070,7 +1070,7 @@ RectTransform:
   m_GameObject: {fileID: 8879774441777754755}
   m_LocalRotation: {x: 0.3888264, y: 0, z: 0, w: 0.9213111}
   m_LocalPosition: {x: 0, y: 0, z: -34.98713}
-  m_LocalScale: {x: 0.0018042196, y: 0.0018042196, z: 0.0018042196}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3562442627763748486}
@@ -1095,7 +1095,7 @@ Canvas:
   m_GameObject: {fileID: 8879774441777754755}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 3
   m_PixelPerfect: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8879774441777754754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1431,21 @@ MonoBehaviour:
   _slider: {fileID: 416014066757540448}
   _textHp: {fileID: 416014066532056277}
   _castle: {fileID: 0}
+--- !u!114 &764273770087294655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416014066757540454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35175e1ee06741e448a8d73e7e14dc46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 416014066757540448}
+  _textHp: {fileID: 416014066532056277}
+  _castle: {fileID: 0}
 --- !u!1001 &3918592671798980364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1555,16 +1570,15 @@ PrefabInstance:
       value: SliderPlayerbar
       objectReference: {fileID: 0}
     - target: {fileID: 2050532959345395139, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
+      propertyPath: _castle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050532959345395139, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
       propertyPath: _textHp
       value: 
       objectReference: {fileID: 3562442628006041652}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
---- !u!224 &3562442627763748486 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 509458678346666378, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
-  m_PrefabInstance: {fileID: 3918592671798980364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3562442628006041652 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 509458678118922040, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
@@ -1576,6 +1590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3562442627763748486 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 509458678346666378, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
+  m_PrefabInstance: {fileID: 3918592671798980364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5634271390043698673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1583,6 +1602,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8879774441777754767}
     m_Modifications:
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _playerWallet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 89148741, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _skins.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 320113682, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _playerWallet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 630783248, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _eventer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 630783248, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _alliedCastleBreaker
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1007790309, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -1598,6 +1661,10 @@ PrefabInstance:
     - target: {fileID: 3822351245041964116, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822351245041964117, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
+      propertyPath: _eventer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3822351245041964118, guid: e0cffb77c9379fe4db4f5d961e18e8d2, type: 3}
       propertyPath: m_Pivot.x
