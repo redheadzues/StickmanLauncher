@@ -4,7 +4,7 @@ public class EnemyCastleBreaker : CastleBreaker
 {
     private void Awake()
     {
-        CastleHp = 5;
+        CastleHp = EnemyDifficulty.CastleHp;
     }
 
     private void OnCollisionEnter(Collision collision)

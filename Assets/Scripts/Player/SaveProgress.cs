@@ -15,6 +15,7 @@ public static class SaveProgress
     private const string c_EnemyCastleHp = "EnemyCastleHp";
     private const string c_EnemyDamage = "EnemyDamage";
     private const string c_EnemySpawnCount = "EnemySpawnCoun";
+    private const string c_EnemySpawnTime = "EnemySpawnTime";
 
     #endregion
 
@@ -69,6 +70,7 @@ public static class SaveProgress
 
     #endregion
 
+    #region GameSettings
     public static float VolumeValue
     {
         get
@@ -80,7 +82,9 @@ public static class SaveProgress
         }
         set { PlayerPrefs.SetFloat(c_VolumeValue, value); }
     }
-    
+
+    #endregion
+
     #region PlayerSkills
 
     public static float Speed
@@ -157,6 +161,18 @@ public static class SaveProgress
                 return 1;
         }
         set { PlayerPrefs.SetInt(c_EnemySpawnCount, value); }
+    }
+
+    public static float EnemySpawnTime
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_EnemySpawnTime))
+                return PlayerPrefs.GetFloat(c_EnemySpawnTime);
+            else
+                return 3;
+        }
+        set { PlayerPrefs.SetFloat(c_EnemySpawnTime, value); }
     }
 
     #endregion
