@@ -7,6 +7,9 @@ public static class SaveProgress
     private const string c_VolumeValue = "VolumeValue";
     private const string c_EquipedSkinId = "EquipedSkinId";
     private const string c_LastLoadScene = "LastLoadScene";
+    private const string c_Speed = "Speed";
+    private const string c_Damage = "Damage";
+    private const string c_CastleHp = "CastleHp";
 
     public static int Money
     {
@@ -66,5 +69,41 @@ public static class SaveProgress
                 return 0;
         }
         set { PlayerPrefs.SetInt(c_EquipedSkinId, value); }
+    }
+
+    public static float Speed
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_Speed))
+                return PlayerPrefs.GetFloat(c_Speed);
+            else
+                return 20;
+        }
+        set { PlayerPrefs.SetFloat(c_Speed, value); }
+    }
+
+    public static float Damage
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_Damage))
+                return PlayerPrefs.GetFloat(c_Damage);
+            else
+                return 1;
+        }
+        set { PlayerPrefs.SetFloat(c_Damage, value); }
+    }
+
+    public static int CastleHp
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_CastleHp))
+                return PlayerPrefs.GetInt(c_CastleHp);
+            else
+                return 5;
+        }
+        set { PlayerPrefs.SetInt(c_CastleHp, value); }
     }
 }
