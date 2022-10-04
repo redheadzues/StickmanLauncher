@@ -7,7 +7,7 @@ public class AlliedCastleBreacker : CastleBreaker
     {
         if (collision.collider.TryGetComponent(out StickmanPathFollower follower))
         {
-            Destroy();
+            ApplyDamage(5);
         }
     }
 
