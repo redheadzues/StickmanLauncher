@@ -5,6 +5,7 @@ public class LevelFinisher : MonoBehaviour
     [SerializeField] private LevelEvent _eventer;
     [SerializeField] private SpawnersContainer _spawnersContainer;
     [SerializeField] private CongratulationParticleContainer _particles;
+    [SerializeField] private UIBar[] _sliders;
     
 
     private void OnValidate()
@@ -30,12 +31,20 @@ public class LevelFinisher : MonoBehaviour
     private void OnDefeat()
     {
         DeactivateSpawners();
+        DeactivateSliders();
     }
 
     private void OnWon()
     {
         DeactivateSpawners();
+        DeactivateSliders();
         _particles.gameObject.SetActive(true);
+    }
+
+    private void DeactivateSliders()
+    {
+        for (int i = 1; i < _sliders.Length; i++)
+            _sliders[i].gameObject.SetActive(true);
     }
 
     private void DeactivateSpawners()

@@ -56,7 +56,7 @@ public abstract class CastleBreaker : MonoBehaviour
             _explosion.SetParticle(_parts[_currentPartIndex].transform.position);
 
         _currentPartIndex++;
-        HpChanged?.Invoke(_parts.Count - _currentPartIndex, _parts.Count);
+        HpChanged?.Invoke(_currentCastleHp, CastleHp);
         PartBreacked?.Invoke();
 
         TryCompleteLevel();
