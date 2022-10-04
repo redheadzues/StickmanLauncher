@@ -22,6 +22,7 @@ public abstract class CastleBreaker : MonoBehaviour
     private void Start()
     {
         _currentCastleHp = CastleHp;
+        HpChanged?.Invoke(_currentCastleHp, CastleHp);
     }
 
     private void OnValidate()
