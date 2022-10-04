@@ -2,6 +2,8 @@ using UnityEngine;
 
 public static class SaveProgress
 {
+    #region Constants
+
     private const string c_Money = "Money";
     private const string c_Stars = "Stars";
     private const string c_VolumeValue = "VolumeValue";
@@ -10,7 +12,13 @@ public static class SaveProgress
     private const string c_Speed = "Speed";
     private const string c_Damage = "Damage";
     private const string c_CastleHp = "CastleHp";
+    private const string c_EnemyCastleHp = "EnemyCastleHp";
+    private const string c_EnemyDamage = "EnemyDamage";
+    private const string c_EnemySpawnCount = "EnemySpawnCoun";
 
+    #endregion
+
+    #region Achivments
     public static int Money
     {
         get
@@ -35,16 +43,16 @@ public static class SaveProgress
         set { PlayerPrefs.SetInt(c_Stars, value); }
     }
 
-    public static float VolumeValue
+    public static int EquipedSkinId
     {
         get
         {
-            if (PlayerPrefs.HasKey(c_VolumeValue))
-                return PlayerPrefs.GetFloat(c_VolumeValue);
+            if (PlayerPrefs.HasKey(c_EquipedSkinId))
+                return PlayerPrefs.GetInt(c_EquipedSkinId);
             else
-                return 1;
+                return 0;
         }
-        set { PlayerPrefs.SetFloat(c_VolumeValue, value); }
+        set { PlayerPrefs.SetInt(c_EquipedSkinId, value); }
     }
 
     public static int LastLoadScene
@@ -59,17 +67,21 @@ public static class SaveProgress
         set { PlayerPrefs.SetInt(c_LastLoadScene, value); }
     }
 
-    public static int EquipedSkinId
+    #endregion
+
+    public static float VolumeValue
     {
         get
         {
-            if (PlayerPrefs.HasKey(c_EquipedSkinId))
-                return PlayerPrefs.GetInt(c_EquipedSkinId);
+            if (PlayerPrefs.HasKey(c_VolumeValue))
+                return PlayerPrefs.GetFloat(c_VolumeValue);
             else
-                return 0;
+                return 1;
         }
-        set { PlayerPrefs.SetInt(c_EquipedSkinId, value); }
+        set { PlayerPrefs.SetFloat(c_VolumeValue, value); }
     }
+    
+    #region PlayerSkills
 
     public static float Speed
     {
@@ -106,4 +118,46 @@ public static class SaveProgress
         }
         set { PlayerPrefs.SetInt(c_CastleHp, value); }
     }
+
+    #endregion
+
+    #region EnemyDifficulty
+
+    public static int EnemyCastleHp
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_EnemyCastleHp))
+                return PlayerPrefs.GetInt(c_EnemyCastleHp);
+            else
+                return 5;
+        }
+        set { PlayerPrefs.SetInt(c_EnemyCastleHp, value); }
+    }
+
+    public static float EnemyDamage
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_EnemyDamage))
+                return PlayerPrefs.GetFloat(c_EnemyDamage);
+            else
+                return 1;
+        }
+        set { PlayerPrefs.SetFloat(c_EnemyDamage, value); }
+    }
+
+    public static int EnemySpawnCount
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_EnemySpawnCount))
+                return PlayerPrefs.GetInt(c_EnemySpawnCount);
+            else
+                return 1;
+        }
+        set { PlayerPrefs.SetInt(c_EnemySpawnCount, value); }
+    }
+
+    #endregion
 }
