@@ -9609,6 +9609,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5634271391049243924, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634271391049243924, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8879774441777754755, guid: a53e7c5bc8a6a774eba6ea70d318314f, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -12944,6 +12952,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e3d1bf8eac8594c9ddac41bfbc68b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1350745292
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4471651716974558667, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_Name
+      value: DifficultyRegulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 549.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1868.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973792887853243742, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56e66ba3cef8c974cb3a10ac4e7e4873, type: 3}
 --- !u!1001 &1357859814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23878,7 +23943,6 @@ MonoBehaviour:
   _capacity: 20
   _container: {fileID: 1645329744}
   _template: {fileID: 3801343529178607582, guid: 15a62dc6d36880e4fa6608339c6cc086, type: 3}
-  _spawntime: 5
   _spawnPoint: {fileID: 1645329744}
   _pathKeeper: {fileID: 1209002874}
 --- !u!4 &1645329744
@@ -24781,6 +24845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e7e31eaf4a8eb44b11c5dc12777220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reloadTime: 0
 --- !u!1001 &1820006752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25265,6 +25330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e7e31eaf4a8eb44b11c5dc12777220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reloadTime: 0
 --- !u!65 &1933915958
 BoxCollider:
   m_ObjectHideFlags: 0
