@@ -14,6 +14,11 @@ public class EnemyDifficultyRegulator : MonoBehaviour
     private int _increaseSpawnCountStep = 1;
     private float _increaseSpawnTineStep = 0.1f;
 
+    private void OnValidate()
+    {
+        _eventer = FindObjectOfType<LevelEvent>();
+    }
+
     private void OnEnable()
     {
         _eventer.Defeated += OnDefeat;

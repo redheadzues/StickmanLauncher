@@ -10,7 +10,6 @@ public static class EnemyDifficulty
     public static int SpawnCount => _spawnCount;
     public static float SpawnTime => _spawnTime;
 
-
     public static void IncreaseDamage(float value)
     {
         if(value > 0)
