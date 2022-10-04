@@ -6,6 +6,7 @@ public class LevelFinisher : MonoBehaviour
     [SerializeField] private SpawnersContainer _spawnersContainer;
     [SerializeField] private CongratulationParticleContainer _particles;
     [SerializeField] private UIBar[] _sliders;
+    [SerializeField] private UIReload _reloadTimer;
     
 
     private void OnValidate()
@@ -13,6 +14,8 @@ public class LevelFinisher : MonoBehaviour
         _eventer = FindObjectOfType<LevelEvent>();
         _spawnersContainer = FindObjectOfType<SpawnersContainer>();
         _particles = FindObjectOfType<CongratulationParticleContainer>();
+        _sliders = FindObjectsOfType<UIBar>();
+        _reloadTimer = FindObjectOfType<UIReload>();
     }
 
     private void OnEnable()
@@ -32,12 +35,14 @@ public class LevelFinisher : MonoBehaviour
     {
         DeactivateSpawners();
         DeactivateSliders();
+        _reloadTimer.gameObject.SetActive(false);
     }
 
     private void OnWon()
     {
         DeactivateSpawners();
         DeactivateSliders();
+        _reloadTimer.gameObject.SetActive(false);
         _particles.gameObject.SetActive(true);
     }
 

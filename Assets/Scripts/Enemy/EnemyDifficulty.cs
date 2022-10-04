@@ -15,7 +15,7 @@ public static class EnemyDifficulty
         if(value > 0)
         {
             _damage += value;
-            SaveProgress.EnemyDamage = value;
+            SaveProgress.EnemyDamage = _damage;
         }        
     }
 
@@ -24,7 +24,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _damage -= value;
-            SaveProgress.EnemyDamage = value;
+            SaveProgress.EnemyDamage = _damage;
         }
     }
 
@@ -33,7 +33,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _castleHp += value;
-            SaveProgress.EnemyCastleHp = value;
+            SaveProgress.EnemyCastleHp = _castleHp;
         }
     }
 
@@ -42,7 +42,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _castleHp -= value;
-            SaveProgress.EnemyCastleHp = value;
+            SaveProgress.EnemyCastleHp = _castleHp;
         }
     }
 
@@ -51,7 +51,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _spawnCount += value;
-            SaveProgress.EnemySpawnCount = value;
+            SaveProgress.EnemySpawnCount = _spawnCount;
         }
     }
 
@@ -60,7 +60,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _spawnCount -= value;
-            SaveProgress.EnemySpawnCount = value;
+            SaveProgress.EnemySpawnCount = _spawnCount;
         }
     }
 
@@ -69,7 +69,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _spawnTime += value;
-            SaveProgress.EnemyDamage = value;
+            SaveProgress.EnemyDamage = _spawnTime;
         }
     }
 
@@ -78,7 +78,7 @@ public static class EnemyDifficulty
         if (value > 0)
         {
             _spawnTime -= value;
-            SaveProgress.EnemyDamage = value;
+            SaveProgress.EnemyDamage = _spawnTime;
         }
     }
 }

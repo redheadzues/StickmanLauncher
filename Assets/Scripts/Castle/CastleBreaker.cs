@@ -42,6 +42,9 @@ public abstract class CastleBreaker : MonoBehaviour
 
     private void TryDestroyPart()
     {
+        if (_currentPartIndex > _parts.Count - 1)
+            return;
+
         if (_percentBreaked < (100 - PercentHp))
         {
             Destroy();
@@ -59,6 +62,8 @@ public abstract class CastleBreaker : MonoBehaviour
         _currentPartIndex++;
         HpChanged?.Invoke(_currentCastleHp, CastleHp);
         PartBreacked?.Invoke();
+
+
 
         TryCompleteLevel();
     }
