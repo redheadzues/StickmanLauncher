@@ -53,13 +53,13 @@ public class UIRankStarDisplayer : MonoBehaviour
 
     private void CalculateCountDisplayStars()
     {
-        if (_alliedCastleBreaker.PercentBreaked > _valueToGetThreeStarPercent)
+        if (_alliedCastleBreaker.PercentHp > _valueToGetThreeStarPercent)
             _displayStarsCount++;
 
-        if (_alliedCastleBreaker.PercentBreaked > _valueToGetTwoStarPercent)
+        if (_alliedCastleBreaker.PercentHp > _valueToGetTwoStarPercent)
             _displayStarsCount++;
 
-        if (_alliedCastleBreaker.PercentBreaked > _valueToGetOneStarPercent)
+        if (_alliedCastleBreaker.PercentHp > _valueToGetOneStarPercent)
             _displayStarsCount++;
 
         _starsHolder.AddStars(_displayStarsCount);

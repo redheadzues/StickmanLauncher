@@ -81,7 +81,6 @@ public class StickmanPathFollower : StickmanAnimator
         if (_currentIndex == _wayPoints.Length - _one)
         {
             StopCoroutine(OnMove());
-
         }
     }
 
