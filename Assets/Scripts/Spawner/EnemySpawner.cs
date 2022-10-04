@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemySpawner : ObjectsPool
 {
     [SerializeField] private GameObject _template;
-    [SerializeField] private float _spawntime;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private PathKeeper _pathKeeper;
 
@@ -29,11 +28,12 @@ public class EnemySpawner : ObjectsPool
 
     private IEnumerator OnSpawn()
     {
-        var waitingTime = new WaitForSeconds(_spawntime);
+        var waitingTime = new WaitForSeconds(EnemyDifficulty.SpawnTime);
 
         while(true)
         {
-            Spawn();
+            for(int i = 0; i < EnemyDifficulty.SpawnCount; i++)
+                Spawn();
 
             yield return waitingTime;
         }

@@ -8,7 +8,6 @@ public static class EnemyDifficulty
     public static float Damage => _damage;
     public static int CastleHp => _castleHp;
     public static int SpawnCount => _spawnCount;
-
     public static float SpawnTime => _spawnTime;
 
 
