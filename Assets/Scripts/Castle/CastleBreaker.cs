@@ -15,7 +15,7 @@ public abstract class CastleBreaker : MonoBehaviour
     public float PercentHp => (_currentCastleHp * 100 / CastleHp) ;
     private float _percentBreaked => (_currentPartIndex * 100 / _parts.Count) ;
     
-    public event Action<float, float> PartBreacked_getData;
+    public event Action<float, float> HpChanged;
     public event Action PartBreacked;
     public event Action CastleBreacked;
 
@@ -56,7 +56,7 @@ public abstract class CastleBreaker : MonoBehaviour
             _explosion.SetParticle(_parts[_currentPartIndex].transform.position);
 
         _currentPartIndex++;
-        PartBreacked_getData?.Invoke(_parts.Count - _currentPartIndex, _parts.Count);
+        HpChanged?.Invoke(_parts.Count - _currentPartIndex, _parts.Count);
         PartBreacked?.Invoke();
 
         TryCompleteLevel();

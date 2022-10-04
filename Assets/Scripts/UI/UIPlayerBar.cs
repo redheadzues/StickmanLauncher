@@ -11,11 +11,11 @@ public class UIPlayerBar : UIBar
 
     private void OnEnable()
     {
-        _castle.PartBreacked_getData += FillSlider;
+        _castle.HpChanged += FillSlider;
     }
 
     private void OnDisable()
     {
-        _castle.PartBreacked_getData -= FillSlider;
+        _castle.HpChanged -= FillSlider;
     }
 }
