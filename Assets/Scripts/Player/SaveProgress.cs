@@ -12,6 +12,7 @@ public static class SaveProgress
     private const string c_Speed = "Speed";
     private const string c_Damage = "Damage";
     private const string c_CastleHp = "CastleHp";
+    private const string c_Reload = "Reload";
     private const string c_EnemyCastleHp = "EnemyCastleHp";
     private const string c_EnemyDamage = "EnemyDamage";
     private const string c_EnemySpawnCount = "EnemySpawnCoun";
@@ -122,6 +123,18 @@ public static class SaveProgress
                 return 5;
         }
         set { PlayerPrefs.SetInt(c_CastleHp, value); }
+    }
+
+    public static float Reload
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_Reload))
+                return PlayerPrefs.GetFloat(c_Reload);
+            else
+                return 3;
+        }
+        set { PlayerPrefs.SetFloat(c_Reload, value); }
     }
 
     #endregion
