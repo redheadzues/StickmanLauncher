@@ -16,6 +16,7 @@ public static class SaveProgress
     private const string c_EnemyDamage = "EnemyDamage";
     private const string c_EnemySpawnCount = "EnemySpawnCoun";
     private const string c_EnemySpawnTime = "EnemySpawnTime";
+    private const string c_LooseInRow = "LooseInRow";
 
     #endregion
 
@@ -173,6 +174,18 @@ public static class SaveProgress
                 return 3;
         }
         set { PlayerPrefs.SetFloat(c_EnemySpawnTime, value); }
+    }
+
+    public static int LooseInRow
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey(c_LooseInRow))
+                return PlayerPrefs.GetInt(c_LooseInRow);
+            else
+                return 0;
+        }
+        set { PlayerPrefs.SetInt(c_LooseInRow, value); }
     }
 
     #endregion
