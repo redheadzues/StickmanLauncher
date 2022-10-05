@@ -6,19 +6,24 @@ using UnityEngine;
 public class UICastleDamage : MonoBehaviour
 {
     [SerializeField] private TMP_Text _textDamage;
+    [SerializeField] private float _flySpeed;
+    [SerializeField] private float _resizeSpeed;
+
+    private Rigidbody _rigidbody;
 
     public void Initialize(float damage)
     {
         _textDamage.text += damage.ToString();
     }
 
-    private IEnumerator Animate()
+    private void OnEnable()
     {
-        while(_textDamage.rectTransform.sizeDelta.x > 0)
-        {
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.AddForce(Vector3.up * 12, ForceMode.Impulse);    
+    }
 
-        }
-
-        yield return null;
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

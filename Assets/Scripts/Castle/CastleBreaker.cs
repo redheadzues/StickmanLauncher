@@ -6,6 +6,7 @@ public abstract class CastleBreaker : MonoBehaviour
 {
     [SerializeField] private List<CastlePartBreaker> _parts;
     [SerializeField] private SpawnerExplosion _explosion;
+    [SerializeField] private UICastleDamage _damageViewTemplate;
 
     protected float CastleHp;
 
@@ -30,12 +31,15 @@ public abstract class CastleBreaker : MonoBehaviour
         _explosion = FindObjectOfType<SpawnerExplosion>();
     }
 
-    protected void ApplyDamage(float damage)
+    protected void ApplyDamage(float damage, Vector3 point)
     {
         if (damage < 0)
             return;
 
         _currentCastleHp -= damage;
+
+        UICastleDamage damageView = Instantiate(_damageViewTemplate, point, Quaternion.identity);
+        damageView.Initialize(damage);
 
         TryDestroyPart();
     }

@@ -11,7 +11,7 @@ public class EnemyCastleBreaker : CastleBreaker
     {
         if(collision.collider.TryGetComponent(out StickmanFlightOperator flyOperator))
         {
-            ApplyDamage(PlayerSkills.Damage);
+            ApplyDamage(PlayerSkills.Damage, collision.contacts[0].point);
         }
     }
 
