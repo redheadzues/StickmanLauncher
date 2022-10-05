@@ -5905,6 +5905,7 @@ MonoBehaviour:
   - {fileID: 1870285209}
   - {fileID: 414163737}
   _explosion: {fileID: 679561490}
+  _damageViewTemplate: {fileID: 236909032764182631, guid: 113a8c5ca59844a4496814c5c45cc749, type: 3}
 --- !u!4 &219997065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d86bb102f4ee8dd44805de7cad2c1178, type: 3}
@@ -7423,6 +7424,7 @@ MonoBehaviour:
   - {fileID: 305822435}
   - {fileID: 478962000}
   _explosion: {fileID: 679561490}
+  _damageViewTemplate: {fileID: 236909032764182631, guid: 113a8c5ca59844a4496814c5c45cc749, type: 3}
 --- !u!54 &569690012
 Rigidbody:
   m_ObjectHideFlags: 0

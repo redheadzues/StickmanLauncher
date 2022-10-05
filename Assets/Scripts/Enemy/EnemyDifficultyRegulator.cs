@@ -4,8 +4,6 @@ public class EnemyDifficultyRegulator : MonoBehaviour
 {
     [SerializeField] private LevelEvent _eventer;
 
-    private static int _difficultyNumber;
-
     private int _looseCountInRow;
     private int _looseCountForDecrese = 2;
 
@@ -34,9 +32,9 @@ public class EnemyDifficultyRegulator : MonoBehaviour
 
     private void OnWon()
     {
-        _difficultyNumber = GetRandomNumberOfDifficult();
-        print(_difficultyNumber);
-        switch (_difficultyNumber)
+        
+
+        switch (GetRandomNumberOfDifficult())
         {
             case 1:
                 EnemyDifficulty.IncreaseDamage(_increaseDamageStep);
@@ -68,11 +66,13 @@ public class EnemyDifficultyRegulator : MonoBehaviour
 
         SaveProgress.LooseInRow = _looseCountInRow;
 
+        print(_looseCountInRow);
+
     }
 
     private void DecreaseDifficulty()
     {
-        switch (_difficultyNumber)
+        switch (GetRandomNumberOfDifficult())
         {
             case 1:
                 EnemyDifficulty.DecreaseDamage(_increaseDamageStep);
@@ -90,8 +90,6 @@ public class EnemyDifficultyRegulator : MonoBehaviour
                 EnemyDifficulty.DecreaseSpawnTime(_increaseSpawnTineStep);
                 break;
         }
-
-        _difficultyNumber = GetRandomNumberOfDifficult();
     }
 
     private int GetRandomNumberOfDifficult()
