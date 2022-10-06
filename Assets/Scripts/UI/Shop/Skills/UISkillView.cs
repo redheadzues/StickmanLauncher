@@ -9,7 +9,7 @@ public abstract class UISkillView : MonoBehaviour
     [SerializeField] private Image _imageProgress;
     [SerializeField] private Button _buttonUpgrade;
     [SerializeField] private int _startPrice;
-    [SerializeField] private int _increasePriceStep;
+    [SerializeField] protected int _increasePriceStep;
     [SerializeField] private float _fillingSpeed;
 
     protected float _skillValuelUpgrade;

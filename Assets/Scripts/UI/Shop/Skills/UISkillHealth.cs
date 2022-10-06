@@ -1,6 +1,6 @@
 public class UISkillHealth : UISkillView
 {
-    private void Start()
+    private void Awake()
     {
         UpdateValues();
     }
