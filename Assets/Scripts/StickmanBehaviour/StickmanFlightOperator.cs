@@ -6,7 +6,8 @@ public class StickmanFlightOperator : StickmanAnimator
     [SerializeField] private float _coroutineDelay;
     [SerializeField] private SpawnerDeathParticle _deathParticle;
     
-    private float _speed = 30;
+    private float _speed;
+    private float _rotationSpeed = 10;
     private Coroutine _coroutine;
     private float _positionY = 1.5f;
     public Vector3 Direction { get; private set; }
@@ -14,6 +15,7 @@ public class StickmanFlightOperator : StickmanAnimator
     private void OnEnable()
     {
         _deathParticle = FindObjectOfType<SpawnerDeathParticle>();
+        _speed = PlayerSkills.Speed;
     }
 
     public void StartFlying(Vector3 direction)
@@ -53,12 +55,13 @@ public class StickmanFlightOperator : StickmanAnimator
     private void RotateOnDirection(Vector3 direction)
     {
         Quaternion lookDirection = Quaternion.LookRotation(Vector3.down, direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookDirection, 5* Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookDirection, _rotationSpeed *  Time.deltaTime);
     }
 
     private void PrepareForFlight(Vector3 direction)
     {
         PlayFly();
+
     }
 
     private Vector3 ClampPositionY(Vector3 position)
@@ -72,9 +75,10 @@ public class StickmanFlightOperator : StickmanAnimator
 
         PrepareForFlight(direction);
 
-        while(gameObject.activeSelf == true)
+        while (gameObject.activeSelf == true)
         {
             RotateOnDirection(direction);
+
             Fly(direction);
             yield return waitingTime;
         }

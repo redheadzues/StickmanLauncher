@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ElasticTensioner : MonoBehaviour
 {
-    [SerializeField] private float _reloadTime;
+    private float _reloadTime;
 
     private float _minPointX = -4;
     private float _maxPointX = 3;
@@ -33,6 +33,9 @@ public class ElasticTensioner : MonoBehaviour
     private void OnEnable()
     {
         _launcher.Successfully += OnSuccessfully;
+        _reloadTime = PlayerSkills.RealyMaxReload - PlayerSkills.Reload;
+        print(PlayerSkills.RealyMaxReload);
+        print(PlayerSkills.Reload);
     }
 
     private void OnDisable()

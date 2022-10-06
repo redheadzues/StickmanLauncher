@@ -8,9 +8,9 @@ public static class PlayerSkills
     private static float _maxSpeed = 40;
     private static float _maxDamage = 10;
     private static float _maxCastleHp = 100;
-    private static float _maxReload = 3f;
+    private static float _maxReload = 2f;
 
-    private static float _realyMaxReload;
+    private static float _realyMaxReload = 2.5f;
 
     private static float _speedImproveStep = 1;
     private static float _damageImproveStep = 0.1f;

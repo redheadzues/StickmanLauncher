@@ -7,11 +7,6 @@ public class EnemyDifficultyRegulator : MonoBehaviour
     private int _looseCountInRow;
     private int _looseCountForDecrese = 2;
 
-    private float _increaseDamageStep = 0.1f;
-    private int _increaseCastleHpStep = 1;
-    private int _increaseSpawnCountStep = 1;
-    private float _increaseSpawnTineStep = 0.1f;
-
     private void OnValidate()
     {
         _eventer = FindObjectOfType<LevelEvent>();
@@ -32,26 +27,9 @@ public class EnemyDifficultyRegulator : MonoBehaviour
 
     private void OnWon()
     {
-        
-
-        switch (GetRandomNumberOfDifficult())
-        {
-            case 1:
-                EnemyDifficulty.IncreaseDamage(_increaseDamageStep);
-                break;
-
-            case 2:
-                EnemyDifficulty.IncreaseCastleHp(_increaseCastleHpStep);
-                break;
-
-            case 3:
-                EnemyDifficulty.IncreaseSpawnCount(_increaseSpawnCountStep);
-                break;
-
-            case 4:
-                EnemyDifficulty.IncreaseSpawnTime(_increaseSpawnTineStep);
-                break;
-        }
+        EnemyDifficulty.IncreaseDifficulty();
+        _looseCountInRow = 0;
+        SaveProgress.LooseInRow = _looseCountInRow;
     }
 
     private void OnDefeat()
@@ -60,37 +38,10 @@ public class EnemyDifficultyRegulator : MonoBehaviour
 
         if (_looseCountInRow >= _looseCountForDecrese)
         {
-            DecreaseDifficulty();
+            EnemyDifficulty.DecreaseDifficulty();
             _looseCountInRow = 0;
         }
 
         SaveProgress.LooseInRow = _looseCountInRow;
-    }
-
-    private void DecreaseDifficulty()
-    {
-        switch (GetRandomNumberOfDifficult())
-        {
-            case 1:
-                EnemyDifficulty.DecreaseDamage(_increaseDamageStep);
-                break;
-
-            case 2:
-                EnemyDifficulty.DecreaseCastleHp(_increaseCastleHpStep);
-                break;
-
-            case 3:
-                EnemyDifficulty.DecreaseSpawnCount(_increaseSpawnCountStep);
-                break;
-
-            case 4:
-                EnemyDifficulty.DecreaseSpawnTime(_increaseSpawnTineStep);
-                break;
-        }
-    }
-
-    private int GetRandomNumberOfDifficult()
-    {
-        return UnityEngine.Random.Range(1, 5);
     }
 }

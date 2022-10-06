@@ -184,7 +184,7 @@ public static class SaveProgress
             if (PlayerPrefs.HasKey(c_EnemySpawnTime))
                 return PlayerPrefs.GetFloat(c_EnemySpawnTime);
             else
-                return 3;
+                return 4;
         }
         set { PlayerPrefs.SetFloat(c_EnemySpawnTime, value); }
     }

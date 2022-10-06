@@ -16,7 +16,9 @@ public class UIReload : MonoBehaviour
 
     private float _coroutineDelay = 0.1f;
     private float _percent = 100;
-    private Coroutine _coroutine;
+    private Coroutine _coroutineFailed;
+    private Color _baseColor;
+
 
     private void OnValidate()
     {
@@ -27,7 +29,7 @@ public class UIReload : MonoBehaviour
     {
         _textTimer = GetComponentInChildren<TMP_Text>();
         _imageTimer = GetComponent<Image>();
-        _textTimer.color = _imageTimer.color;
+        _baseColor = _imageTimer.color;
     }
 
     private void OnEnable()
@@ -47,16 +49,18 @@ public class UIReload : MonoBehaviour
 
     private void OnLaunchFailed()
     {
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
+        if (_coroutineFailed != null)
+            StopCoroutine(_coroutineFailed);
 
-        _coroutine = StartCoroutine(OnFailedDisplay());
+        _coroutineFailed = StartCoroutine(OnFailedDisplay());
     }
 
     private void OnReload(float reloadTime)
     {
         _textTimer.gameObject.SetActive(true);
         _imageTimer.fillAmount = 1;
+        _imageTimer.color = _baseColor;
+        _textTimer.color = _baseColor;
         SetAlphaColorImageTimer(_targetAlpha);
         StartCoroutine(OnReloadDisplay(reloadTime));
     }
@@ -70,8 +74,6 @@ public class UIReload : MonoBehaviour
 
     private IEnumerator OnFailedDisplay()
     {
-        Color _baseColor = _imageTimer.color;
-
         for(int i = 0; i < _cyclesBlincking*2; i++)
         {
             if (_imageTimer.color == _blinkColor)
@@ -91,7 +93,7 @@ public class UIReload : MonoBehaviour
 
     private IEnumerator OnReloadDisplay(float reloadTime)
     {
-        float stepFillAmount = (reloadTime * _coroutineDelay)/_percent;
+        float stepFillAmount = _coroutineDelay/reloadTime;
         float displayReload = reloadTime;
 
         while(displayReload > 0)
@@ -103,8 +105,10 @@ public class UIReload : MonoBehaviour
             yield return new WaitForSeconds(_coroutineDelay);
         }
 
+        _textTimer.gameObject.SetActive(false);
         SetAlphaColorImageTimer(0);
 
-        _textTimer.gameObject.SetActive(false);
+        if(_coroutineFailed != null)
+            StopCoroutine(_coroutineFailed);        
     }
 }
