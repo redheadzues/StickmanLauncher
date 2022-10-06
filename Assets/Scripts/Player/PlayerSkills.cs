@@ -59,7 +59,7 @@ public static class PlayerSkills
 
     public static void ImproveReload()
     {
-        if(_reload - _reloadImproveStep >= _maxReload)
+        if(_reload + _reloadImproveStep <= _maxReload)
         {
             _reload += _reloadImproveStep;
             SaveProgress.Reload = _reload;

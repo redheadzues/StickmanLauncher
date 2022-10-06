@@ -16,6 +16,7 @@ public class StickmanLauncher : DirectionFinder
     private void Awake()
     {
         _charger = GetComponent<StickmanCharger>();
+        PlayerPrefs.DeleteAll();
     }
 
     private void OnEnable()
