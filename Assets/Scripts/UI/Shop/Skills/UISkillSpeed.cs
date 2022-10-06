@@ -13,6 +13,7 @@ public class UISkillSpeed : UISkillView
     {
         _skillValuelUpgrade = PlayerSkills.Speed;
         _skillMaxValue = PlayerSkills.MaxSpeed;
+        _baseValue = PlayerSkills.BaseSpeed;
     }
 
     protected override void OnButtonUpgradeClick()

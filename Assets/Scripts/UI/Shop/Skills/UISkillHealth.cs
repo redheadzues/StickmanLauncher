@@ -9,6 +9,7 @@ public class UISkillHealth : UISkillView
     {
         _skillValuelUpgrade = PlayerSkills.CastleHp;
         _skillMaxValue = PlayerSkills.MaxCastleHp;
+        _baseValue = PlayerSkills.BaseCastleHp;
     }
 
     protected override void OnButtonUpgradeClick()

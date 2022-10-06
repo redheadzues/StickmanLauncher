@@ -10,6 +10,7 @@ public class UISkillReload : UISkillView
     {
         _skillValuelUpgrade = PlayerSkills.Reload;
         _skillMaxValue = PlayerSkills.MaxReload;
+        _baseValue = PlayerSkills.BaseReload;
     }
 
     protected override void OnButtonUpgradeClick()

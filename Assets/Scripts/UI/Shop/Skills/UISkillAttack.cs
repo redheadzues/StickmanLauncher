@@ -13,6 +13,7 @@ public class UISkillAttack : UISkillView
     {
         _skillValuelUpgrade = PlayerSkills.Damage;
         _skillMaxValue = PlayerSkills.MaxDamage;
+        _baseValue = PlayerSkills.BaseDamage;
     }
 
     protected override void OnButtonUpgradeClick()

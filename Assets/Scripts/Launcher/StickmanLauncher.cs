@@ -16,7 +16,6 @@ public class StickmanLauncher : DirectionFinder
     private void Awake()
     {
         _charger = GetComponent<StickmanCharger>();
-        PlayerPrefs.DeleteAll();
     }
 
     private void OnEnable()
@@ -28,6 +27,10 @@ public class StickmanLauncher : DirectionFinder
     private void Start()
     {
         Successfully?.Invoke();
+        print($"{PlayerSkills.Speed} {SaveProgress.Speed}");
+        print($"{PlayerSkills.Damage} {SaveProgress.Damage}");
+        print($"{PlayerSkills.Reload} {SaveProgress.Reload}");
+        print($"{PlayerSkills.CastleHp} {SaveProgress.CastleHp}");
     }
 
     private void OnDisable()

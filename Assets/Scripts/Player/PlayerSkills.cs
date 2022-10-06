@@ -17,6 +17,16 @@ public static class PlayerSkills
     private static int _castleHpImproveStep = 1;
     private static float _reloadImproveStep = 0.1f;
 
+    private static int _baseCastleHp = 5;
+    private static float _baseSpeed = 20;
+    private static float _baseDamage = 1;
+    private static float _baseReload = 0;
+
+    public static int BaseCastleHp => _baseCastleHp;
+    public static float BaseSpeed => _baseSpeed;
+    public static float BaseDamage => _baseDamage;
+    public static float BaseReload => _baseReload;
+
 
     public static float MaxSpeed => _maxSpeed;
     public static float MaxDamage => _maxDamage;
