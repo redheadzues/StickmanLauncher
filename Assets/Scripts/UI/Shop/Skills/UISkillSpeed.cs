@@ -18,8 +18,11 @@ public class UISkillSpeed : UISkillView
 
     protected override void OnButtonUpgradeClick()
     {
-        PlayerSkills.ImproveSpeed();
-        UpdateValues();
-        DisplyayView();
+        if(TryBuySkill() == true)
+        {
+            PlayerSkills.ImproveSpeed();
+            UpdateValues();
+            DisplyayView();
+        }
     }
 }

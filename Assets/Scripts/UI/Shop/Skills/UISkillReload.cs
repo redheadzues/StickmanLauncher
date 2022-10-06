@@ -15,8 +15,11 @@ public class UISkillReload : UISkillView
 
     protected override void OnButtonUpgradeClick()
     {
-        PlayerSkills.ImproveReload();
-        UpdateValues();
-        DisplyayView();
+        if(TryBuySkill() == true)
+        {
+            PlayerSkills.ImproveReload();
+            UpdateValues();
+            DisplyayView();
+        }
     }
 }

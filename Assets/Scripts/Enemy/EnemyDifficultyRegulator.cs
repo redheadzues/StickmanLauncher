@@ -65,9 +65,6 @@ public class EnemyDifficultyRegulator : MonoBehaviour
         }
 
         SaveProgress.LooseInRow = _looseCountInRow;
-
-        print(_looseCountInRow);
-
     }
 
     private void DecreaseDifficulty()

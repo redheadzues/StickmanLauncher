@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public abstract class UISkillView : MonoBehaviour
 {
+    [SerializeField] protected PlayerWallet _playerWallet;
+    [SerializeField] protected int _increasePriceStep;
     [SerializeField] private TMP_Text _textPrice;
     [SerializeField] private Image _imageProgress;
     [SerializeField] private Button _buttonUpgrade;
     [SerializeField] private int _startPrice;
-    [SerializeField] protected int _increasePriceStep;
     [SerializeField] private float _fillingSpeed;
 
     protected float _skillValuelUpgrade;
@@ -18,7 +19,12 @@ public abstract class UISkillView : MonoBehaviour
 
     private Coroutine _coroutine;
     
-    protected int _currentPrice => (int)(_skillValuelUpgrade * _increasePriceStep);
+    protected int _currentPrice => (int)(_startPrice + _skillValuelUpgrade * _increasePriceStep);
+
+    private void OnValidate()
+    {
+        _playerWallet = FindObjectOfType<PlayerWallet>();
+    }
 
     private void OnEnable()
     {
@@ -38,6 +44,16 @@ public abstract class UISkillView : MonoBehaviour
     {
         StartFilling();
         _textPrice.text = _currentPrice.ToString();
+    }
+
+    protected bool TryBuySkill()
+    {
+        bool isEnough = _playerWallet.Money > _currentPrice;
+
+        if (isEnough == true)
+            _playerWallet.SpendMoney(_currentPrice);
+
+        return isEnough;
     }
 
     private void StartFilling()

@@ -2959,11 +2959,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f27a0d97b7228f4aa21a436cc29fd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerWallet: {fileID: 0}
+  _increasePriceStep: 50
   _textPrice: {fileID: 3418581160728936632}
   _imageProgress: {fileID: 5376567091778107301}
   _buttonUpgrade: {fileID: 5379810494495223027}
   _startPrice: 50
-  _increasePriceStep: 50
   _fillingSpeed: 10
 --- !u!1001 &3918592671798980364
 PrefabInstance:
@@ -3086,7 +3087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509458678346666379, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
       propertyPath: m_Name
-      value: SliderPlayerbar
+      value: SliderPlayerBar
       objectReference: {fileID: 0}
     - target: {fileID: 2050532959345395139, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
       propertyPath: _castle
@@ -3516,11 +3517,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd51957b834178146bf43570a0493f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerWallet: {fileID: 0}
+  _increasePriceStep: 100
   _textPrice: {fileID: 7744286142886593119}
   _imageProgress: {fileID: 1050852791705548098}
   _buttonUpgrade: {fileID: 1054101142229052948}
-  _startPrice: 100
-  _increasePriceStep: 500
+  _startPrice: 50
   _fillingSpeed: 10
 --- !u!1001 &6989113837370067361
 PrefabInstance:
@@ -3690,11 +3692,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34481ad7513c7cc47a826493cb61e1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerWallet: {fileID: 0}
+  _increasePriceStep: 1000
   _textPrice: {fileID: 6591634018554762988}
   _imageProgress: {fileID: 4509908676298678769}
   _buttonUpgrade: {fileID: 4513697986270689959}
-  _startPrice: 1000
-  _increasePriceStep: 1000
+  _startPrice: 100
   _fillingSpeed: 10
 --- !u!1001 &7248422361958296383
 PrefabInstance:
@@ -3864,9 +3867,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b587069bf8aeb344fa1727f5e47dbe52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerWallet: {fileID: 0}
+  _increasePriceStep: 10
   _textPrice: {fileID: 6851087232542323826}
   _imageProgress: {fileID: 4251303175590265711}
   _buttonUpgrade: {fileID: 4236237819623708729}
-  _startPrice: 100
-  _increasePriceStep: 100
+  _startPrice: 50
   _fillingSpeed: 10

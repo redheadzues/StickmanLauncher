@@ -14,8 +14,11 @@ public class UISkillHealth : UISkillView
 
     protected override void OnButtonUpgradeClick()
     {
-        PlayerSkills.ImproveCastleHp();
-        UpdateValues();
-        DisplyayView();
+        if(TryBuySkill() == true)
+        {
+            PlayerSkills.ImproveCastleHp();
+            UpdateValues();
+            DisplyayView();
+        }
     }
 }

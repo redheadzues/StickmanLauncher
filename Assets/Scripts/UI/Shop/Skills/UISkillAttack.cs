@@ -7,6 +7,7 @@ public class UISkillAttack : UISkillView
     private void Awake()
     {
         UpdateValues();
+        print(PlayerSkills.Damage);
     }
 
     private void UpdateValues()
@@ -18,8 +19,12 @@ public class UISkillAttack : UISkillView
 
     protected override void OnButtonUpgradeClick()
     {
-        PlayerSkills.ImproveDamage();
-        UpdateValues();
-        DisplyayView();
+        if(TryBuySkill() == true)
+        {
+            PlayerSkills.ImproveDamage();
+            UpdateValues();
+            DisplyayView();
+            print(PlayerSkills.Damage);
+        }
     }
 }
