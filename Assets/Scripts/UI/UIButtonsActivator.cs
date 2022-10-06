@@ -27,6 +27,7 @@ public class UIButtonsActivator : MonoBehaviour
     private void OnLevelFinish()
     {
         for (int i = 0; i < _buttons.Length; i++)
+
             _buttons[i].gameObject.SetActive(true);
     }
 }

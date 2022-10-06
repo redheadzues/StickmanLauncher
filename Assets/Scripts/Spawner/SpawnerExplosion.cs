@@ -11,8 +11,11 @@ public class SpawnerExplosion : ObjectsPool
 
     public void SetParticle(Vector3 position)
     {
-        ParticleSystem particle = GetParticle();
-        particle.transform.position = position;
+        if(position == null)
+        {
+            ParticleSystem particle = GetParticle();
+            particle.transform.position = position;
+        }
     }
 
     private ParticleSystem GetParticle()
