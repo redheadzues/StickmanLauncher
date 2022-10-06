@@ -8,7 +8,9 @@ public static class PlayerSkills
     private static float _maxSpeed = 40;
     private static float _maxDamage = 10;
     private static float _maxCastleHp = 100;
-    private static float _minReload = 0.5f;
+    private static float _maxReload = 3f;
+
+    private static float _realyMaxReload;
 
     private static float _speedImproveStep = 1;
     private static float _damageImproveStep = 0.1f;
@@ -19,12 +21,14 @@ public static class PlayerSkills
     public static float MaxSpeed => _maxSpeed;
     public static float MaxDamage => _maxDamage;
     public static float MaxCastleHp => _maxCastleHp;
-    public static float MinReload => _minReload;
+    public static float MaxReload => _maxReload;
+    public static float RealyMaxReload => _realyMaxReload;
+
 
     public static float Speed => _speed;
     public static float Damage => _damage;
     public static float CastleHp => _castleHp;
-    public static float Reload => _reload;  
+    public static float Reload => _reload;
 
     public static void ImproveSpeed()
     {
@@ -55,7 +59,7 @@ public static class PlayerSkills
 
     public static void ImproveReload()
     {
-        if(_reload - _reloadImproveStep >= _minReload)
+        if(_reload - _reloadImproveStep >= _maxReload)
         {
             _reload += _reloadImproveStep;
             SaveProgress.Reload = _reload;

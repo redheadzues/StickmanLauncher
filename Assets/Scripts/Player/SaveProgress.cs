@@ -132,7 +132,7 @@ public static class SaveProgress
             if (PlayerPrefs.HasKey(c_Reload))
                 return PlayerPrefs.GetFloat(c_Reload);
             else
-                return 3;
+                return 0;
         }
         set { PlayerPrefs.SetFloat(c_Reload, value); }
     }
