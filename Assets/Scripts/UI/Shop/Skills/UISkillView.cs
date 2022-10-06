@@ -10,16 +10,19 @@ public abstract class UISkillView : MonoBehaviour
     [SerializeField] private Button _buttonUpgrade;
     [SerializeField] private int _startPrice;
     [SerializeField] private int _increasePriceStep;
+    [SerializeField] private float _fillingSpeed;
 
     protected float _skillValuelUpgrade;
     protected float _skillMaxValue;
 
     private Coroutine _coroutine;
+    
     protected int _currentPrice => (int)(_skillValuelUpgrade * _increasePriceStep);
 
     private void OnEnable()
     {
         _buttonUpgrade.onClick.AddListener(OnButtonUpgradeClick);
+        _imageProgress.fillAmount = _skillValuelUpgrade / _skillMaxValue;
         DisplyayView();
     }
 
@@ -48,9 +51,8 @@ public abstract class UISkillView : MonoBehaviour
     {
         while(_imageProgress.fillAmount != (_skillValuelUpgrade / _skillMaxValue))
         {
-            _imageProgress.fillAmount = Mathf.Lerp(_imageProgress.fillAmount, _skillValuelUpgrade / _skillMaxValue, Time.deltaTime);
+            _imageProgress.fillAmount = Mathf.Lerp(_imageProgress.fillAmount, _skillValuelUpgrade / _skillMaxValue, _fillingSpeed * Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
         }
-
-        yield return new WaitForSeconds(0.01f);
     }
 }
