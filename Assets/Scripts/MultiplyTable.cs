@@ -8,6 +8,7 @@ public class MultiplyTable : MonoBehaviour
 
     private StickmanFlightOperator _lastDuplicate;
     private float _DuplicateOffsetX = 2.5f;
+    private float _rightBoardX = 9.5f;
 
     public event Action Duplicated;
 
@@ -48,6 +49,9 @@ public class MultiplyTable : MonoBehaviour
 
     private Vector3 DefineDuplicatePosition(Vector3 point)
     {
+        if (point.x + _DuplicateOffsetX > _rightBoardX)
+            return new Vector3(point.x - _DuplicateOffsetX, point.y, point.z);
+
         return new Vector3(point.x + _DuplicateOffsetX, point.y, point.z);
     }
 }

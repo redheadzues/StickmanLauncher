@@ -8,7 +8,6 @@ public class Wall : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.TryGetComponent(out StickmanFlightOperator flyOperator))
-            Bounced?.Invoke();  
-
+            Bounced?.Invoke();
     }
 }
