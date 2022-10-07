@@ -10,6 +10,6 @@ public abstract class UIBar : MonoBehaviour
     protected void FillSlider(float value, float maxValue)
     {
         _slider.value = value/maxValue;
-        _textHp.text = $"{value} / {maxValue}";
+        _textHp.text = $"{Mathf.Round(value)} / {maxValue}";
     }
 }

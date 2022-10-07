@@ -481,7 +481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -63.711, y: 347.71}
+  m_AnchoredPosition: {x: -63.710938, y: 347.71}
   m_SizeDelta: {x: 94.1333, y: 68.3479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &495333586
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 3268352583210376375}
   - component: {fileID: 3268352583210376328}
   m_Layer: 5
-  m_Name: ButtonOpenCustomizer
+  m_Name: ButtonOpenShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb482bf3469a1940ac2c6132f6d5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _customizer: {fileID: 0}
+  _shop: {fileID: 0}
 --- !u!1 &3268352583360926557
 GameObject:
   m_ObjectHideFlags: 0

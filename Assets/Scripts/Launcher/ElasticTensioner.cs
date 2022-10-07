@@ -34,8 +34,6 @@ public class ElasticTensioner : MonoBehaviour
     {
         _launcher.Successfully += OnSuccessfully;
         _reloadTime = PlayerSkills.RealyMaxReload - PlayerSkills.Reload;
-        print(PlayerSkills.RealyMaxReload);
-        print(PlayerSkills.Reload);
     }
 
     private void OnDisable()
@@ -43,16 +41,20 @@ public class ElasticTensioner : MonoBehaviour
         _launcher.Successfully -= OnSuccessfully;
     }
 
-    private void OnSuccessfully()
-    {
-        _lastTimeShot = Time.time;
-    }
 
     private void Start()
     {
         _lastTimeShot = -_reloadTime;
         _rigidbody = GetComponent<Rigidbody>();
         _basePosition = transform.position;
+    }
+    private void OnSuccessfully()
+    {
+        if(Time.time > 0)
+        {
+            _lastTimeShot = Time.time;
+            ReloadStarted?.Invoke(_reloadTime);
+        }
     }
 
     private void OnMouseDown()
@@ -91,10 +93,7 @@ public class ElasticTensioner : MonoBehaviour
         _rigidbody.isKinematic = false;
 
         if (Time.time > _lastTimeShot + _reloadTime)
-        {
             DragFinished?.Invoke();
-            ReloadStarted?.Invoke(_reloadTime);
-        }
         else
             LaunchFailed?.Invoke();
     }

@@ -6,10 +6,12 @@ public class StickmanLauncher : DirectionFinder
 {
     [SerializeField] private ElasticTensioner _elasticTensioner;
     [SerializeField] private float _launchPoint;
+    [SerializeField] private Collider _notLaunchZone;
     
 
     private StickmanFlightOperator _lastCharged;
     private StickmanCharger _charger;
+    private bool _isLauchEnable = false;
 
     public event UnityAction Successfully;
 
@@ -47,19 +49,38 @@ public class StickmanLauncher : DirectionFinder
 
     private void OnDragFinished()
     {
-        if (TryLaunch())
+        if (TryLaunch() == true)
             Successfully?.Invoke();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == _notLaunchZone)
+        {
+            _isLauchEnable = false;
+            print(_isLauchEnable);
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other == _notLaunchZone)
+        {
+            _isLauchEnable = true;
+            print(_isLauchEnable);
+        }
     }
 
     private bool TryLaunch()
     {
-       if(transform.position.z < _launchPoint)
+       if(_isLauchEnable == true)
        {
             _lastCharged.transform.SetParent(null);
             var direction = GetNormalizedVector();
             _lastCharged.StartFlying(direction);
        }
 
-        return transform.position.z < _launchPoint;
+        return _isLauchEnable;
     }
 }
