@@ -42,7 +42,7 @@ public class ButtonOpenLeaderboard : MonoBehaviour
         }
         else
         {            
-            PlayerAccount.Authorize(OpenLeaderboard);
+            PlayerAccount.Authorize();
         }
 
 #endif

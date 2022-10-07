@@ -95,7 +95,7 @@ public class UIReload : MonoBehaviour
         float stepFillAmount = _coroutineDelay/reloadTime;
         float displayReload = reloadTime;
 
-        while(displayReload > 0)
+        while(displayReload > _coroutineDelay)
         {
             displayReload -= _coroutineDelay;
             _textTimer.text = Math.Round(displayReload, 2).ToString();

@@ -49,7 +49,7 @@ public class LevelFinisher : MonoBehaviour
     private void DeactivateSliders()
     {
         for (int i = 1; i < _sliders.Length; i++)
-            _sliders[i].gameObject.SetActive(true);
+            _sliders[i].gameObject.SetActive(false);
     }
 
     private void DeactivateSpawners()

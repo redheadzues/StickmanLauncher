@@ -31,6 +31,22 @@ public abstract class CastleBreaker : MonoBehaviour
         _explosion = FindObjectOfType<SpawnerExplosion>();
     }
 
+    private void OnEnable()
+    {
+        CastleBreacked += OnCastleBreaked;    
+    }
+
+    private void OnDisable()
+    {
+        CastleBreacked -= OnCastleBreaked;
+    }
+
+    private void OnCastleBreaked()
+    {
+        if(TryGetComponent(out Collider collider))
+            collider.enabled = false;
+    }
+
     protected void ApplyDamage(float damage, Vector3 point)
     {
         if (damage < 0)

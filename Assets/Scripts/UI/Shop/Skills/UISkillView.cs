@@ -48,7 +48,7 @@ public abstract class UISkillView : MonoBehaviour
 
     protected bool TryBuySkill()
     {
-        bool isEnough = _playerWallet.Money > _currentPrice;
+        bool isEnough = _playerWallet.Money >= _currentPrice;
 
         if (isEnough == true)
             _playerWallet.SpendMoney(_currentPrice);

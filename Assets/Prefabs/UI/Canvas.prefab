@@ -2741,6 +2741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SliderEnemyBar
       objectReference: {fileID: 0}
+    - target: {fileID: 509458678346666381, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2050532959345395139, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
@@ -3088,6 +3092,10 @@ PrefabInstance:
     - target: {fileID: 509458678346666379, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
       propertyPath: m_Name
       value: SliderPlayerBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 509458678346666381, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2050532959345395139, guid: 7510804742b2b406e92c117f3a43f9b3, type: 3}
       propertyPath: _castle

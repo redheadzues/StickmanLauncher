@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ElasticTensioner : MonoBehaviour
 {
+    [SerializeField] private StickmanLauncher _launcher;
+
     private float _reloadTime;
 
     private float _minPointX = -4;
@@ -17,7 +19,6 @@ public class ElasticTensioner : MonoBehaviour
     private Vector3 _offset;
     private Vector3 _basePosition;
     private float _lastTimeShot;
-    private StickmanLauncher _launcher;
 
     public event Action DragStarted;
     public event Action DragFinished;
@@ -33,7 +34,6 @@ public class ElasticTensioner : MonoBehaviour
     private void OnEnable()
     {
         _launcher.Successfully += OnSuccessfully;
-        _reloadTime = PlayerSkills.RealyMaxReload - PlayerSkills.Reload;
     }
 
     private void OnDisable()
@@ -44,13 +44,14 @@ public class ElasticTensioner : MonoBehaviour
 
     private void Start()
     {
+        _reloadTime = PlayerSkills.RealyMaxReload - PlayerSkills.Reload;
         _lastTimeShot = -_reloadTime;
         _rigidbody = GetComponent<Rigidbody>();
         _basePosition = transform.position;
     }
     private void OnSuccessfully()
     {
-        if(Time.timeSinceLevelLoad > 0)
+        if(Time.timeSinceLevelLoadAsDouble > 0)
         {
             _lastTimeShot = Time.time;
             ReloadStarted?.Invoke(_reloadTime);
