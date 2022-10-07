@@ -7,7 +7,6 @@ public class UISkillAttack : UISkillView
     private void Awake()
     {
         UpdateValues();
-        print(PlayerSkills.Damage);
     }
 
     private void UpdateValues()

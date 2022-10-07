@@ -165,16 +165,16 @@ public static class SaveProgress
         set { PlayerPrefs.SetFloat(c_EnemyDamage, value); }
     }
 
-    public static int EnemySpawnCount
+    public static float EnemySpawnCount
     {
         get
         {
             if (PlayerPrefs.HasKey(c_EnemySpawnCount))
-                return PlayerPrefs.GetInt(c_EnemySpawnCount);
+                return PlayerPrefs.GetFloat(c_EnemySpawnCount);
             else
                 return 1;
         }
-        set { PlayerPrefs.SetInt(c_EnemySpawnCount, value); }
+        set { PlayerPrefs.SetFloat(c_EnemySpawnCount, value); }
     }
 
     public static float EnemySpawnTime

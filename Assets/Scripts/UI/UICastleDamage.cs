@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class UICastleDamage : MonoBehaviour
 
     public void Initialize(float damage)
     {
-        _textDamage.text += damage.ToString();
+        _textDamage.text += Math.Round(damage, 2).ToString();
     }
 
     private void OnEnable()

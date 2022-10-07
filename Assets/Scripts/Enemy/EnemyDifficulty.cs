@@ -3,12 +3,12 @@ public static class EnemyDifficulty
 {
     private static float _damage = SaveProgress.EnemyDamage;
     private static int _castleHp = SaveProgress.EnemyCastleHp;
-    private static int _spawnCount = SaveProgress.EnemySpawnCount;
+    private static float _spawnCount = SaveProgress.EnemySpawnCount;
     private static float _spawnTime = SaveProgress.EnemySpawnTime;
 
     private static float _changeDamageStep = 0.1f;
     private static int _changeCastleHpStep = 1;
-    private static int _changeSpawnCountStep = 1;
+    private static float _changeSpawnCountStep = 0.2f;
     private static float _changeSpawnTineStep = 0.1f;
 
     private static float _minDamage = 1;
@@ -18,7 +18,7 @@ public static class EnemyDifficulty
 
     public static float Damage => _damage;
     public static int CastleHp => _castleHp;
-    public static int SpawnCount => _spawnCount;
+    public static float SpawnCount => _spawnCount;
     public static float SpawnTime => _spawnTime;
 
     public static void IncreaseDifficulty()
@@ -103,7 +103,7 @@ public static class EnemyDifficulty
         }
     }
 
-    private static void IncreaseSpawnCount(int value)
+    private static void IncreaseSpawnCount(float value)
     {
         if (value > 0)
         {
@@ -112,7 +112,7 @@ public static class EnemyDifficulty
         }
     }
 
-    private static void DecreaseSpawnCount(int value)
+    private static void DecreaseSpawnCount(float value)
     {
         if ((_spawnCount - value > _minSpawnCount) && (value > 0))
         {

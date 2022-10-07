@@ -29,10 +29,14 @@ public class EnemySpawner : ObjectsPool
     private IEnumerator OnSpawn()
     {
         var waitingTime = new WaitForSeconds(EnemyDifficulty.SpawnTime);
+        int spawnCount = Mathf.RoundToInt(EnemyDifficulty.SpawnCount);
+
+        if (spawnCount <= 0)
+            spawnCount = 1;
 
         while(true)
         {
-            for(int i = 0; i < EnemyDifficulty.SpawnCount; i++)
+            for(int i = 0; i < spawnCount; i++)
                 Spawn();
 
             yield return waitingTime;

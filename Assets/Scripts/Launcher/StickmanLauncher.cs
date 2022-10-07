@@ -56,20 +56,14 @@ public class StickmanLauncher : DirectionFinder
     private void OnTriggerEnter(Collider other)
     {
         if (other == _notLaunchZone)
-        {
             _isLauchEnable = false;
-            print(_isLauchEnable);
-        }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other == _notLaunchZone)
-        {
             _isLauchEnable = true;
-            print(_isLauchEnable);
-        }
     }
 
     private bool TryLaunch()
