@@ -50,7 +50,7 @@ public class ElasticTensioner : MonoBehaviour
     }
     private void OnSuccessfully()
     {
-        if(Time.time > 0)
+        if(Time.timeSinceLevelLoad > 0)
         {
             _lastTimeShot = Time.time;
             ReloadStarted?.Invoke(_reloadTime);

@@ -21185,7 +21185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1645329743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22636,6 +22636,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8120051118834944997, guid: a34207dab7a4bab4f8b87e218c3bdade, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120051119460577063, guid: a34207dab7a4bab4f8b87e218c3bdade, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8120051119634882032, guid: a34207dab7a4bab4f8b87e218c3bdade, type: 3}
       propertyPath: m_RootOrder
       value: 4

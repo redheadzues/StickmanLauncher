@@ -20,7 +20,6 @@ public class DeskLifter : MonoBehaviour
         else
             transform.position = GetTargetPosition(_positionVerticalStayClosed);
 
-
         StartCoroutine(OnMove());
     }
 

@@ -15,7 +15,6 @@ public class UIReload : MonoBehaviour
     [SerializeField] private Color _blinkColor;
 
     private float _coroutineDelay = 0.1f;
-    private float _percent = 100;
     private Coroutine _coroutineFailed;
     private Color _baseColor;
 
@@ -34,7 +33,7 @@ public class UIReload : MonoBehaviour
 
     private void OnEnable()
     {
-        _tensioner.ReloadStarted += OnReload;
+        _tensioner.ReloadStarted += OnReloadStarted;
         _tensioner.LaunchFailed += OnLaunchFailed;
         _imageTimer.fillAmount = 0;
         SetAlphaColorImageTimer(0);
@@ -43,7 +42,7 @@ public class UIReload : MonoBehaviour
 
     private void OnDisable()
     {
-        _tensioner.ReloadStarted -= OnReload;
+        _tensioner.ReloadStarted -= OnReloadStarted;
         _tensioner.LaunchFailed -= OnLaunchFailed;
     }
 
@@ -55,7 +54,7 @@ public class UIReload : MonoBehaviour
         _coroutineFailed = StartCoroutine(OnFailedDisplay());
     }
 
-    private void OnReload(float reloadTime)
+    private void OnReloadStarted(float reloadTime)
     {
         _textTimer.gameObject.SetActive(true);
         _imageTimer.fillAmount = 1;
@@ -109,6 +108,6 @@ public class UIReload : MonoBehaviour
         SetAlphaColorImageTimer(0);
 
         if(_coroutineFailed != null)
-            StopCoroutine(_coroutineFailed);        
+            StopCoroutine(_coroutineFailed);
     }
 }

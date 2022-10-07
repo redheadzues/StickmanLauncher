@@ -54,14 +54,15 @@ public class StickmanFlightOperator : StickmanAnimator
 
     private void RotateOnDirection(Vector3 direction)
     {
-        Quaternion lookDirection = Quaternion.LookRotation(Vector3.down, direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookDirection, _rotationSpeed *  Time.deltaTime);
+        //Quaternion lookDirection = Quaternion.LookRotation(Vector3.down, direction);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, lookDirection, _rotationSpeed *  Time.deltaTime);
+        transform.rotation = Quaternion.LookRotation(Vector3.down, direction);
     }
 
     private void PrepareForFlight(Vector3 direction)
     {
         PlayFly();
-
+        RotateOnDirection(direction);
     }
 
     private Vector3 ClampPositionY(Vector3 position)
@@ -77,8 +78,6 @@ public class StickmanFlightOperator : StickmanAnimator
 
         while (gameObject.activeSelf == true)
         {
-            RotateOnDirection(direction);
-
             Fly(direction);
             yield return waitingTime;
         }
