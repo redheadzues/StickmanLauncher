@@ -10,8 +10,8 @@ public class UISkinView : MonoBehaviour
     [SerializeField] private TMP_Text _textButton;
     [SerializeField] private Image _imageCoin;
 
-    private const string c_Equip = "Одеть";
-    private const string c_Equiped = "Одето";
+    private const string c_Equip = "Надеть";
+    private const string c_Equiped = "Надето";
     private UISkin _skin;
 
     public event Action<UISkinView> BuyButtonClicked;
